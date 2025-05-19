@@ -1,0 +1,73 @@
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { motion } from "framer-motion";
+
+export default function HomePage() {
+  return (
+    <div className="min-h-screen bg-white text-gray-800">
+      {/* Hero Section */}
+      <div className="relative h-screen bg-[url('h3.jpg')] bg-cover bg-center flex items-center justify-center">
+        <div className="bg-black bg-opacity-50 p-10 rounded-2xl text-center">
+          <motion.h1
+            className="text-5xl font-bold text-white mb-4"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+          >
+            Welcome to Oakwood Stables
+          </motion.h1>
+          <motion.p
+            className="text-lg text-white mb-6"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+          >
+            Where elegance meets equine passion
+          </motion.p>
+          <Button className="text-white bg-amber-700 hover:bg-amber-800 px-6 py-2 text-lg rounded-xl">
+            Meet Our Horses
+          </Button>
+        </div>
+      </div>
+
+      {/* Introduction Section */}
+      <div className="py-16 px-6 md:px-20 bg-amber-50">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 1 }}
+          viewport={{ once: true }}
+        >
+          <h2 className="text-4xl font-semibold text-center text-amber-900 mb-8">
+            A Home for Horses & Horse Lovers
+          </h2>
+          <p className="text-lg text-center max-w-3xl mx-auto">
+            Nestled in the heart of the countryside, Oakwood Stables is more than just a place—it's a lifestyle. Whether you're an experienced rider or a beginner, our stables offer the perfect space to connect with majestic horses in a serene environment.
+          </p>
+        </motion.div>
+      </div>
+
+      {/* Highlight Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6 md:px-20 pb-20">
+        <Card className="shadow-xl rounded-2xl">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-xl font-semibold mb-2">Riding Lessons</h3>
+            <p>Tailored lessons for all ages and skill levels.</p>
+          </CardContent>
+        </Card>
+        <Card className="shadow-xl rounded-2xl">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-xl font-semibold mb-2">Horse Boarding</h3>
+            <p>Spacious stalls, professional care, and peaceful pastures.</p>
+          </CardContent>
+        </Card>
+        <Card className="shadow-xl rounded-2xl">
+          <CardContent className="p-6 text-center">
+            <h3 className="text-xl font-semibold mb-2">Events & Shows</h3>
+            <p>Join us for exciting equestrian events and showcases.</p>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+}

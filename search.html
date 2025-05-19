@@ -1,0 +1,155 @@
+<section class="search-filter">
+  <div class="breadcrumb">
+    <p><a href="index.html">Home</a> &gt; <a href="gallery.html"Gallery</a> &gt; <span>Horse Stable</span></p>
+  </div>
+  
+  <div class="search-controls">
+    <input type="text" placeholder="Search horse stable..." />
+    <button>Search</button>
+  </div>
+
+  <div class="filter-tags">
+    <button>Horse Stable Door</button>
+    <button>Luxury Stable</button>
+    <button>Stable Background</button>
+    <button>Empty Stable</button>
+  </div>
+
+  <div class="sort-options">
+    <label for="sort">Sort by:</label>
+    <select id="sort">
+      <option value="popular">Most Popular</option>
+      <option value="recent">Most Recent</option>
+      <option value="rating">Highest Rated</option>
+    </select>
+  </div>
+</section>
+
+.search-filter {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  .breadcrumb {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #0072ff;
+  }
+  
+  .search-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .search-controls input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .search-controls button {
+    padding: 10px 20px;
+    background-color: #0072ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .search-controls button:hover {
+    background-color: #005bb5;
+  }
+  
+  .filter-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .filter-tags button {
+    padding: 8px 15px;
+    border: 1px solid #0072ff;
+    background-color: #e6f0ff;
+    color: #0072ff;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .filter-tags button:hover {
+    background-color: #cce0ff;
+  }
+  
+  .sort-options {
+    text-align: right;
+  }
+  
+  .sort-options label {
+    margin-right: 10px;
+  }
+  
+  .sort-options select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  <div class="flex flex-col items-center my-6">
+    <input type="text" placeholder="Search stables..." class="w-full md:w-1/2 p-2 rounded border shadow" />
+    <div class="flex flex-wrap gap-2 mt-3 justify-center">
+      <button class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded">Horse Stable Door</button>
+      <button class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded">Luxury Stable</button>
+      <button class="bg-gray-200 hover:bg-gray-300 px-3 py-1 rounded">Empty Stable</button>
+      <!-- Add more as needed -->
+    </div>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-4">
+    <img src="/images/stable1.jpg" alt="Horse in stall" class="rounded shadow" />
+    <img src="/images/stable2.jpg" alt="Wooden stable door" class="rounded shadow" />
+    <img src="/images/stable3.jpg" alt="Luxury stable" class="rounded shadow" />
+    <!-- Add more images -->
+  </div>
+  <footer class="bg-gray-900 text-gray-300 px-6 py-10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6">
+      <div>
+        <h2 class="text-white text-xl font-semibold mb-2">GEYWOOD ACRES STABLE</h2>
+        <p>Elegant care for your horses.</p>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Learn More</h3>
+        <ul>
+          <li><a href="#" class="hover:text-white">Boarding Info</a></li>
+          <li><a href="gallery.html" class="hover:text-white">Gallery</a></li>
+          <li><a href="#" class="hover:text-white">Tips & Articles</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Company</h3>
+        <ul>
+          <li><a href="about.html" class="hover:text-white">About Us</a></li>
+          <li><a href="#" class="hover:text-white">Careers</a></li>
+          <li><a href="cont.html" class="hover:text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="font-bold mb-2">Follow Us</h3>
+        <div class="flex gap-3">
+          <a href="#"><i class="fab fa-facebook-f text-white text-xl"></i></a>
+          <a href="#"><i class="fab fa-twitter text-white text-xl"></i></a>
+          <a href="#"><i class="fab fa-instagram text-white text-xl"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+      

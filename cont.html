@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEYWOOD ACRES STABLE | Contact Us</title>
+
+  <!-- Styles and Fonts -->
+  <link rel="stylesheet" href="st.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+    <h1>GEYWOOD ACRES STABLE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="breed.html">Breeds</a></li>
+        <li><a href="caree.html">Care Tips</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="deli.html">Delivery</a></li>
+        <li><a href="cont.html" class="active">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main>
+    <section class="contact-section" data-aos="fade-up">
+      <h2>Contact Us</h2>
+      <p>Have questions, feedback, or horse love to share? Drop us a message below!</p>
+      
+    <form
+    action="https://formspree.io/f/mzzrpqvo"
+    class="fs-form"
+    target="_top"
+    method="POST"
+  >
+    <div class="fs-field">
+      <label class="fs-label" for="name">Your Name</label>
+      <input class="fs-input" id="name" name="name" required />
+    </div>
+    <div class="fs-field">
+      <label class="fs-label" for="email">Email</label>
+      <input class="fs-input" id="email" name="email" required />
+      <p class="fs-description">
+        This will help me respond to your query via an email.
+      </p>
+    </div>
+    <div class="fs-field">
+      <label class="fs-label" for="message">Message</label>
+      <textarea
+        class="fs-textarea"
+        id="message"
+        name="message"
+        required
+      ></textarea>
+      <p class="fs-description">What would you like to discuss?</p>
+    </div>
+    <div class="fs-button-group">
+      <button class="fs-button" type="submit">Submit</button>
+    </div>
+  </form>
+
+   
+     
+    <section class="info" data-aos="fade-up">
+      <h3>Visit or Reach Us</h3>
+      <p><strong>Address:</strong> Geywood Acres Stable,pinner HA5,london</p>
+      <p><strong>Phone:</strong> +447459919309</p>
+      <p><strong>Email:</strong>  geywoodacresstableinfo@gmail.com</p>
+      <p><strong>Opening Hours:</strong> Mon - Sat: 8:00am - 6:00pm</p>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" data-aos="fade-up">
+    <div class="footer-content">
+      <div>
+        <h2>GEYWOOD ACRES STABLE</h2>
+        <p>Elegant care for your horses.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="breed.html">Boarding Info</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="caree.html">Care Tips</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="carrer.html">Careers</a></li>
+          <li><a href="cont.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+    document.getElementById('darkModeToggle').addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+
+</body>
+</html>

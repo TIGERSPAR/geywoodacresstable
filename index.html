@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GEYWOOD ACRES STABLE | Home</title>
+
+  <!-- Styles and Fonts -->
+  <link rel="stylesheet" href="st.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>
+
+  <!-- Background Music -->
+  <audio autoplay loop hidden>
+    <source src="B.m" type="audio/mpeg" />
+  </audio>
+
+  <!-- Search -->
+  <div class="search-container">
+    <input type="text" id="SearchInput" placeholder="Search horses..." />
+  </div>
+
+  <!-- Header -->
+  <header>
+    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
+    <h1>GEYWOOD ACRES STABLE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="breed.html">Breeds</a></li>
+        <li><a href="caree.html">Care Tips</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html" >Videos</a></li>
+        <li><a href="deli.html">Delivery</a></li>
+        <li><a href="cont.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Newsletter Popup -->
+  <div id="newsletter-popup" class="popup">
+    <div class="popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <h2>Subscribe to Our Newsletter</h2>
+      <p>Get the latest tips and updates about horses</p>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="hero-content">
+      <h2>Welcome to GEYWOOD ACRES STABLE</h2>
+      <p>Your one-stop hub for all things equestrian!</p>
+      <a href="breed.html" class="btn">Explore Breeds</a>
+    </div>
+    <div class="hero-slider">
+      <img id="sliderImage" src="h10.jpg" alt="Show horse"/>
+    </div>
+  </section>
+
+  <!-- Image Slider -->
+  <div class="slider">
+    <img class="slide" src="h23.jpeg" alt="Horse 1">
+    <img class="slide" src="h19.jpg" alt="Horse 2">
+    <img class="slide" src="h17.jpg" alt="Horse 3">
+    <img class="slide" src="h2.jpg" alt="Horse 4">
+    <a class="prev" onclick="changeSlide(-1)">❮</a>
+    <a class="next" onclick="changeSlide(1)">❯</a>
+  </div>
+
+  <!-- Welcome Message -->
+  <section class="welcome" data-aos="fade-up">
+    <div class="content">
+      <h2>Learn, Love, and Ride with Horses</h2>
+      <p>Whether you’re a first-time owner or a lifelong equestrian, we provide quality care, tips, and connections to your dream horse.</p>
+      <img src="h27.jpg" alt="Beautiful horses" class="responsive-img" />
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials" data-aos="fade-up">
+    <h2>What Horse Lovers Say</h2>
+    <blockquote>"This website helped me choose the perfect horse!" – Sarah</blockquote>
+    <blockquote>"Amazing tips for first-time horse owners!" – Mike</blockquote>
+    <blockquote>"I found the horse of my dreams." – Spark</blockquote>
+    <blockquote>"I saw this site and it was wow!" – Samjr</blockquote>
+  </section>
+
+  <!-- Image Carousel -->
+  <section data-aos="fade-up">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="h29.jpeg"></div>
+        <div class="swiper-slide"><img src="h9.jpg"></div>
+        <div class="swiper-slide"><img src="h16.jpg"></div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+<section>
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b1.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b1.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
+  </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b2.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b2.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div>   
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b3.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b3.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
+  </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b4.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b4.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div> 
+<div class="image-container">
+  <div class="image-wrapper">
+    <img src="b5.jpg" alt="horse 1" class="image">
+    <span class="enlarged-image-container">
+      <img src="b5.jpg" alt="horse 1" class="enlarged-image">
+    </span>  
+  </div>
+  <div class="image-container">
+    <div class="image-wrapper">
+      <img src="b6.jpg" alt="horse 2" class="image">
+      <span class="enlarged-image-container">
+        <img src="b6.jpg" alt="horse 2" class="enlarged-image">
+      </span>  
+    </div>
+  </div> 
+</div>     
+<style>
+  .image-container{
+    display: flex;
+  }
+   .image-wrapper{
+    margin: 10px;
+  }
+  .image{
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+  }
+  .enlarged-image-container{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+  }
+  .enlarged-image{
+    max-width: 500px;
+    max-height: 500px;
+  }
+  .show-enlarged-image{
+    display: flex;
+  }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded',function(){
+    const images=document.querySelectorAll('.image');
+     
+    images.forEach((image) =>{
+      image.addEventListener('click',function(){
+        const enlargedimagecontainer = image.nextElementSibling;
+        enlargedimagecontainer.classList.toggle('show-enlarged-image');
+        enlargedimagecontainer.addEventListener('click',function(){
+          this.classList.remove('show-enlarged-image');
+        });
+      });
+      
+    });
+  });
+</script>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div>
+        <h2>GEYWOOD ACRES STABLE</h2>
+        <p>Elegant care for your horses.</p>
+      </div>
+      <div>
+        <h3>Explore</h3>
+        <ul>
+          <li><a href="breed.html">Boarding Info</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="caree.html">Care Tips</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="carrer.html">Careers</a></li>
+          <li><a href="cont.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+    </div>
+    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    AOS.init();
+
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("slide");
+    function showSlide(index) {
+      for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
+      slides[index].classList.add("active");
+    }
+    function changeSlide(n) {
+      slideIndex += n;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      showSlide(slideIndex);
+    }
+    function autoSlide() {
+      slideIndex = (slideIndex + 1) % slides.length;
+      showSlide(slideIndex);
+      setTimeout(autoSlide, 5000);
+    }
+    autoSlide();
+
+    const imgElement = document.getElementById("sliderImage");
+    const images = ["h1.jpg", "h2.jpg", "h14.jpg", "h4.jpg"];
+    let current = 0;
+    setInterval(() => {
+      current = (current + 1) % images.length;
+      imgElement.src = images[current];
+    }, 5000);
+
+    function openForm() {
+      document.getElementById('contactForm').style.display = 'block';
+    }
+    function closeForm() {
+      document.getElementById('contactForm').style.display = 'none';
+    }
+  </script>
+
+  <!-- Live Chat (Tawk.to) -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {}, Tawk_loadStart = new Date();
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/YOUR_personal_ID/1gvmrsdpv';
+      s1.charset = 'UTF-8';
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
+
+</body>
+</html>
