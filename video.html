@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>GEYWOOD ACRES STABLE | Videos</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #292e2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header {
+  background-color: #292e2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative;
+}
+header h1 {
+  margin-bottom: 0.5rem;
+  font-size: 2.5rem;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+nav a {
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+nav a:hover,
+nav a.active {
+  color: #f1c40f;
+}
+
+
+    main {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 200px;
+      border: none;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: #292e2f;
+      color: white;
+    }
+
+    .dark-mode-toggle {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #0072ff;
+      color: white;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /* Dark mode */
+    body.dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    body.dark-mode header,
+    body.dark-mode nav ul,
+    body.dark-mode footer {
+      background-color: #1a1a1a;
+    }
+
+    body.dark-mode nav ul li a {
+      color: #ccc;
+    }
+
+    body.dark-mode nav ul li a.active,
+    body.dark-mode nav ul li a:hover {
+      background-color: #333;
+    }
+
+    body.dark-mode main {
+      background-color: #1e1e1e;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>GEYWOOD ACRES STABLE</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="breed.html">Breeds</a></li>
+        <li><a href="caree.html">Care Tips</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html" class="active">Videos</a></li>
+        <li><a href="deli.html">Delivery</a></li>
+        <li><a href="cont.html">Contact</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+
+    <h2>Horse Videos</h2>
+    <p style="text-align: center;">Watch our horses in action — training, playing, and showing off their grace.</p>
+
+    <div class="video-grid" data-aos="fade-up">
+      <iframe src="v1.mp4" title="Horse galloping"></iframe>
+      <iframe src="v2.mp4" title="Horse show jumping"></iframe>
+      <iframe src="v3.mp4" title="Horse grooming and care"></iframe>
+      <iframe src="v4.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v5.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v6.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v7.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v8.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v9.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v10.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v11.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v12.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v13.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v14.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v15.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v16.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v17.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v18.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v19.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v20.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v21.mp4" title="Foal playing in the field"></iframe>
+      <iframe src="v22.mp4" title="Foal playing in the field"></iframe>
+    </div>
+  </main>
+
+  <footer>
+    <div>
+        <h3>Contact Us</h3>
+        <p>Email:  geywoodacresstableinfo@gmail.com | Phone: 07459919309</p>
+      </div>
+      <div>
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+      </div>
+    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
+</body>
+</html>
