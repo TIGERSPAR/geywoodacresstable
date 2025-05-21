@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - GRYWOODACRESSTABLE</title>
-  <link rel="stylesheet" href="style.css" />
-  <style> 
+  <title>Breeds - GRYWOODACRESSTABLE</title>
+  <link rel="stylesheet" href="style.css" /> 
+  <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
@@ -13,7 +13,6 @@
       margin: 0; padding: 0;
       line-height: 1.6;
     }
-
     .navbar {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -25,14 +24,12 @@
       top: 0;
       z-index: 1000;
     }
-
     .navbar .logo {
       font-size: 1.5rem;
       font-weight: 700;
       color: #ff6f61;
       cursor: default;
     }
-
     .navbar nav ul {
       list-style: none;
       margin: 0;
@@ -40,7 +37,6 @@
       display: flex;
       gap: 25px;
     }
-
     .navbar nav ul li a {
       text-decoration: none;
       color: #2c3e50;
@@ -49,13 +45,11 @@
       border-radius: 6px;
       transition: color 0.3s ease;
     }
-
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
       background: #ff6f61;
       color: white;
     }
-
     .dark-toggle {
       background: transparent;
       border: none;
@@ -67,82 +61,59 @@
       border-radius: 6px;
       transition: background 0.3s ease;
     }
-
     .dark-toggle:hover {
       background: #ff6f61;
       color: white;
     }
-
     main {
-      max-width: 900px;
+      max-width: 1000px;
       margin: 50px auto 70px;
       padding: 0 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
-
-    main h1 {
+    h1 {
       color: #ff6f61;
       text-align: center;
-      padding-top: 30px;
       font-weight: 800;
       letter-spacing: 2px;
+      margin-bottom: 20px;
     }
-
-    .intro {
-      padding: 20px 30px;
-      font-size: 1.15rem;
-      text-align: center;
-      color: #3a4a59;
+    .breed-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 30px;
     }
-
-    .team-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 30px 20px 50px;
-    }
-
-    .team-member {
-      flex: 1 1 250px;
-      max-width: 250px;
-      background: #f6f9fc;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      text-align: center;
-      padding: 25px 15px 30px;
+    .breed-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      overflow: hidden;
       transition: transform 0.3s ease;
       cursor: default;
     }
-
-    .team-member:hover {
+    .breed-card:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
     }
-
-    .team-member img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
+    .breed-card img {
+      width: 100%;
+      height: 180px;
       object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #ff6f61;
     }
-
-    .team-member h3 {
-      margin: 0 0 6px;
-      font-weight: 700;
+    .breed-info {
+      padding: 20px;
+    }
+    .breed-info h3 {
+      margin: 0 0 10px;
       color: #2c3e50;
+      font-weight: 700;
+      font-size: 1.25rem;
     }
-
-    .team-member p {
+    .breed-info p {
       margin: 0;
-      font-size: 0.9rem;
-      color: #666;
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.4;
     }
-
     footer {
       text-align: center;
       padding: 20px 10px;
@@ -151,61 +122,42 @@
       background: #fafafa;
       margin-top: 60px;
     }
-
     /* Dark Mode */
-
     body.dark-mode {
       background: #121212;
       color: #ddd;
     }
-
     body.dark-mode .navbar {
       background: #1f1f1f;
       box-shadow: 0 2px 5px rgba(255,255,255,0.1);
     }
-
     body.dark-mode .navbar nav ul li a {
       color: #ccc;
     }
-
     body.dark-mode .navbar nav ul li a.active,
     body.dark-mode .navbar nav ul li a:hover {
       background: #ff6f61;
       color: #fff;
     }
-
     body.dark-mode .dark-toggle {
       color: #ff6f61;
     }
-
     body.dark-mode main {
-      background: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
+      background: transparent;
     }
-
-    body.dark-mode .intro,
-    body.dark-mode .team-member h3 {
+    body.dark-mode .breed-card {
+      background: #1e1e1e;
+      box-shadow: 0 6px 18px rgba(255,111,97,0.3);
+    }
+    body.dark-mode .breed-info h3 {
       color: #ddd;
     }
-
-    body.dark-mode .team-member p {
+    body.dark-mode .breed-info p {
       color: #bbb;
     }
-
     body.dark-mode footer {
       background: #1a1a1a;
       color: #bbb;
-    }
-
-    /* Responsive */
-    @media (max-width: 650px) {
-      .team-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .team-member {
-        max-width: 320px;
-      }
     }
   </style>
 </head>
@@ -215,11 +167,11 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html" class="active">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="breeds.html" class="active">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
+        <li><a href="price.html">pricing</a></li>
         <li><a href="adoption.html">Adoption</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="delivary.html">Delivery</a></li>
@@ -229,28 +181,55 @@
   </header>
 
   <main>
-    <h1>About GRYWOODACRESSTABLE</h1>
-    <p class="intro">
-      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect furry companions through responsible breeding and adoption.
-    </p>
+    <h1>Popular Breeds at GRYWOODACRESSTABLE</h1>
+    <div class="breed-grid">
+      <article class="breed-card">
+        <img src="h10.jpg" alt="Gypsy Cob" />
+        <div class="breed-info">
+          <h3>Gypsy Cob</h3>
+          <p>Friendly, intelligent, and devoted. Perfect for families looking for a loyal companion.</p>
+        </div>
+      </article>
 
-    <section class="team-section">
-      <div class="team-member">
-        <img src="t2.jpeg" alt="Jane Doe - Founder" />
-        <h3>Jane Doe</h3>
-        <p>Founder &amp; Head Breeder</p>
-      </div>
-      <div class="team-member">
-        <img src="t3.jpeg" alt="Rose mary - Adoption Coordinator" />
-        <h3>Rose mary</h3>
-        <p>Adoption Coordinator</p>
-      </div>
-      <div class="team-member">
-        <img src="t6.jpeg" alt="Emily Clark - Puppy Care Specialist" />
-        <h3>Emily Clark</h3>
-        <p>horse Care Specialist</p>
-      </div>
-    </section>
+      <article class="breed-card">
+        <img src="h20.jpg" alt="Irish Sport Horse" />
+        <div class="breed-info">
+          <h3>Irish Sport Horse</h3>
+          <p>Compact, playful, and affectionate. Great for city living and small spaces.</p>
+        </div>
+      </article>
+
+      <article class="breed-card">
+        <img src="h16.jpg" alt="Highland Pony" />
+        <div class="breed-info">
+          <h3>Highland Pony</h3>
+          <p>Energetic and strong-willed, Huskies need active owners who love adventure.</p>
+        </div>
+      </article>
+
+      <article class="breed-card">
+        <img src="n19.jpg" alt="Warmblood" />
+        <div class="breed-info">
+          <h3>Warmblood</h3>
+          <p>Cheerful and curious, Beagles are great family dogs that love to explore.</p>
+        </div>
+      </article>
+      <article class="breed-card">
+        <img src="n20.jpg" alt="Welsh Pony and Cob" />
+        <div class="breed-info">
+          <h3>Welsh Pony and Cob</h3>
+          <p>Cheerful and curious, Beagles are great family dogs that love to explore.</p>
+        </div>
+      </article>
+       </article>
+      <article class="breed-card">
+        <img src="n21.jpg" alt="Thoroughbred" />
+        <div class="breed-info">
+          <h3>Thoroughbred</h3>
+          <p>Cheerful and curious, Beagles are great family dogs that love to explore.</p>
+        </div>
+      </article>
+    </div>
   </main>
 
   <footer>

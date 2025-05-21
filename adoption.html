@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adoption - GRYWOODACRESSTABLE</title>
+  <link rel="stylesheet" href="style.css" />
+  <style> 
+    body {
+      background: #f9fbfd;
+      color: #2c3e50;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+    }
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 50px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff6f61;
+      cursor: default;
+    }
+    .navbar nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+    .navbar nav ul li a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.3s ease;
+    }
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      background: #ff6f61;
+      color: white;
+    }
+    .dark-toggle {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #ff6f61;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .dark-toggle:hover {
+      background: #ff6f61;
+      color: white;
+    }
+    main {
+      max-width: 900px;
+      margin: 50px auto 70px;
+      padding: 0 20px;
+    }
+    h1 {
+      color: #ff6f61;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+    }
+    .intro-text {
+      text-align: center;
+      font-size: 1.15rem;
+      margin-bottom: 40px;
+      color: #3a5160;
+    }
+    .puppy-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 50px;
+    }
+    .puppy-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .puppy-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(255,111,97,0.3);
+    }
+    .puppy-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-bottom: 3px solid #ff6f61;
+    }
+    .puppy-info {
+      padding: 15px 20px;
+    }
+    .puppy-info h3 {
+      margin: 0 0 8px;
+      color: #ff6f61;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+    .puppy-info p {
+      margin: 0;
+      color: #4a6171;
+      font-size: 0.95rem;
+    }
+    form.adoption-form {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    form.adoption-form h2 {
+      color: #ff6f61;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 20px;
+      letter-spacing: 1.5px;
+    }
+    form.adoption-form input,
+    form.adoption-form select,
+    form.adoption-form textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 1.8px solid #ccc;
+      border-radius: 8px;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+    form.adoption-form input:focus,
+    form.adoption-form select:focus,
+    form.adoption-form textarea:focus {
+      border-color: #ff6f61;
+      outline: none;
+    }
+    form.adoption-form button {
+      background: #ff6f61;
+      color: white;
+      padding: 14px;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    form.adoption-form button:hover {
+      background: #e65b50;
+    }
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #999;
+      background: #fafafa;
+      margin-top: 60px;
+    }
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark-mode .navbar {
+      background: #1f1f1f;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+    body.dark-mode .navbar nav ul li a {
+      color: #ccc;
+    }
+    body.dark-mode .navbar nav ul li a.active,
+    body.dark-mode .navbar nav ul li a:hover {
+      background: #ff6f61;
+      color: #fff;
+    }
+    body.dark-mode .dark-toggle {
+      color: #ff6f61;
+    }
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+    body.dark-mode .puppy-card {
+      background: #222;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
+    }
+    body.dark-mode form.adoption-form {
+      background: #222;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
+    }
+    body.dark-mode form.adoption-form input,
+    body.dark-mode form.adoption-form select,
+    body.dark-mode form.adoption-form textarea {
+      background: #333;
+      color: #ddd;
+      border: 1.8px solid #555;
+    }
+    body.dark-mode form.adoption-form input:focus,
+    body.dark-mode form.adoption-form select:focus,
+    body.dark-mode form.adoption-form textarea:focus {
+      border-color: #ff6f61;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">GRYWOODACRESSTABLE</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="breeds.html">Breeds</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="price.html" >Pricing</a></li>
+        <li><a href="adoption.html" class="active">Adoption</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="delivary.html">Delivery</a></li>
+      </ul>
+    </nav>
+    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+  </header>
+
+  <main>
+    <h1>Adopt Your New Best Friend</h1>
+    <p class="intro-text">Find your perfect horse today! Below are some of our adorable horses currently waiting for loving homes.</p>
+    
+    <div class="puppy-list">
+      <div class="puppy-card">
+        <img src="n7.jpg" alt="Gypsy cob" />
+        <div class="puppy-info">
+          <h3>Gypsy cob</h3>
+          <p></p>
+        </div>
+      </div>
+      <div class="puppy-card">
+        <img src="n8.jpg" alt="Irish sport horse" />
+        <div class="puppy-info">
+          <h3>Irish sport horse</h3>
+          <p></p>
+        </div>
+      </div>
+      <div class="puppy-card">
+        <img src="n9.jpg" alt="Highland pony" />
+        <div class="puppy-info">
+          <h3>Highland pony</h3>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <form class="adoption-form" action="https://formspree.io/f/xdkgbjdz" method="post">
+      <h2>Adoption Application</h2>
+      <input type="text" name="fullname" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <select name="puppy" required>
+        <option value="" disabled selected>Select horse to Adopt</option>
+        <option value="goldie">Gypsy cob</option>
+        <option value="bella">Irish sport horse</option>
+        <option value="rocky">Highland pony</option>
+         <option value="rocky">Warm blood</option>
+         <option value="rocky">Welsh pony and cob</option>
+         <option value="rocky">Thoroughbred</option>
+      </select>
+      <textarea name="message" rows="5" placeholder="Tell us a bit about yourself and why you'd make a great horse parent!" required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
+  </main>
+
+  <footer>
+    &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+  </footer>
+
+  <script>
+     const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+  </script> 
+  </body>
+  </html>

@@ -2,298 +2,419 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GEYWOOD ACRES STABLE | Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home - GRYWOODACRESSTABLE</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      background: #f9fbfd;
+      color: #2c3e50;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0; 
+    }
 
-  <!-- Styles and Fonts -->
-  <link rel="stylesheet" href="st.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet"/>
+    .navbar {
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 50px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff6f61;
+      cursor: default;
+    }
+
+    .navbar nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    .navbar nav ul li a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      background: #ff6f61;
+      color: white;
+    }
+
+    .dark-toggle {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #ff6f61;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background: #ff6f61;
+      color: white;
+    }
+
+    .hero {
+      background: url('n2.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .hero .btn {
+      background: #ff6f61;
+      color: white;
+      padding: 15px 35px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.4);
+    }
+
+    .hero .btn:hover {
+      background: #e55a4e;
+      box-shadow: 0 10px 25px rgba(229,90,78,0.6);
+    }
+
+    .featured-breeds {
+      max-width: 1100px;
+      margin: 50px auto 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .featured-breeds h2 {
+      font-size: 2.4rem;
+      color: #ff6f61;
+      margin-bottom: 30px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .breed-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .breed-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      width: 280px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .breed-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .breed-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .breed-card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .breed-card-content h3 {
+      margin: 0 0 12px 0;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .breed-card-content p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .breed-card-content a {
+      margin-top: 15px;
+      text-align: center;
+      background: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+
+    .breed-card-content a:hover {
+      background: #e55a4e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #999;
+      background: #fafafa;
+      margin-top: 60px;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+
+    body.dark-mode .navbar {
+      background: #1f1f1f;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .navbar nav ul li a {
+      color: #ccc;
+    }
+
+    body.dark-mode .navbar nav ul li a.active,
+    body.dark-mode .navbar nav ul li a:hover {
+      background: #ff6f61;
+      color: #fff;
+    }
+
+    body.dark-mode .dark-toggle {
+      color: #ff6f61;
+    }
+
+    body.dark-mode .hero {
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    }
+
+    body.dark-mode .featured-breeds h2 {
+      color: #ff6f61;
+    }
+
+    body.dark-mode .breed-card {
+      background: #1e1e1e;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
+    }
+
+    body.dark-mode .breed-card-content h3,
+    body.dark-mode .breed-card-content p {
+      color: #ddd;
+    }
+
+    body.dark-mode .breed-card-content a {
+      background: #ff6f61;
+      color: white;
+    }
+
+    body.dark-mode .breed-card-content a:hover {
+      background: #e55a4e;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .breed-cards {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .hero p {
+        font-size: 1.1rem;
+      }
+      .breed-card {
+        width: 100%;
+      }
+    }
+    body.dark-mode #newsletterPopup .popup-content {
+  background: #ff8a7a;
+  box-shadow: 0 8px 20px rgba(255, 140, 122, 0.8);
+}
+
+  </style>
 </head>
 <body>
-
-  <!-- Background Music -->
-  <audio autoplay loop hidden>
-    <source src="B.m" type="audio/mpeg" />
-  </audio>
-
-  <!-- Search -->
-  <div class="search-container">
-    <input type="text" id="SearchInput" placeholder="Search horses..." />
-  </div>
-
-  <!-- Header -->
-  <header>
-    <button id="darkModeToggle" class="dark-mode-toggle">🌙</button>
-    <h1>GEYWOOD ACRES STABLE</h1>
+  <header class="navbar">
+    <div class="logo">GRYWOODACRESSTABLE</div>
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="breed.html">Breeds</a></li>
-        <li><a href="caree.html">Care Tips</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="breeds.html">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="video.html" >Videos</a></li>
-        <li><a href="deli.html">Delivery</a></li>
-        <li><a href="cont.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        
+        <li><a href="price.html">pricing</a></li>
+        <li><a href="adoption.html">Adoption</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="delivary.html">Delivery</a></li>
+       
       </ul>
     </nav>
+    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
   </header>
 
-  <!-- Newsletter Popup -->
-  <div id="newsletter-popup" class="popup">
-    <div class="popup-content">
-      <span class="close-btn" onclick="closePopup()">&times;</span>
-      <h2>Subscribe to Our Newsletter</h2>
-      <p>Get the latest tips and updates about horses</p>
-      <form id="newsletter-form">
-        <input type="email" id="newsletter-email" placeholder="Enter your email" required />
-        <button type="submit">Subscribe</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
-    <div class="hero-content">
-      <h2>Welcome to GEYWOOD ACRES STABLE</h2>
-      <p>Your one-stop hub for all things equestrian!</p>
-      <a href="breed.html" class="btn">Explore Breeds</a>
-    </div>
-    <div class="hero-slider">
-      <img id="sliderImage" src="h10.jpg" alt="Show horse"/>
-    </div>
+  <section class="hero">
+    <h1>Welcome to our stable</h1>
+    <p>Your happy place to find the perfect horse companion</p>
+    <a href="adoption.html" class="btn">View our horses for Adoption</a>
   </section>
 
-  <!-- Image Slider -->
-  <div class="slider">
-    <img class="slide" src="h23.jpeg" alt="Horse 1">
-    <img class="slide" src="h19.jpg" alt="Horse 2">
-    <img class="slide" src="h17.jpg" alt="Horse 3">
-    <img class="slide" src="h2.jpg" alt="Horse 4">
-    <a class="prev" onclick="changeSlide(-1)">❮</a>
-    <a class="next" onclick="changeSlide(1)">❯</a>
-  </div>
-
-  <!-- Welcome Message -->
-  <section class="welcome" data-aos="fade-up">
-    <div class="content">
-      <h2>Learn, Love, and Ride with Horses</h2>
-      <p>Whether you’re a first-time owner or a lifelong equestrian, we provide quality care, tips, and connections to your dream horse.</p>
-      <img src="h27.jpg" alt="Beautiful horses" class="responsive-img" />
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials" data-aos="fade-up">
-    <h2>What Horse Lovers Say</h2>
-    <blockquote>"This website helped me choose the perfect horse!" – Sarah</blockquote>
-    <blockquote>"Amazing tips for first-time horse owners!" – Mike</blockquote>
-    <blockquote>"I found the horse of my dreams." – Spark</blockquote>
-    <blockquote>"I saw this site and it was wow!" – Samjr</blockquote>
-  </section>
-
-  <!-- Image Carousel -->
-  <section data-aos="fade-up">
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="h29.jpeg"></div>
-        <div class="swiper-slide"><img src="h9.jpg"></div>
-        <div class="swiper-slide"><img src="h16.jpg"></div>
+  <section class="featured-breeds">
+    <h2>Featured Breeds</h2>
+    <div class="breed-cards">
+      <div class="breed-card">
+        <img src="n3.jpg" alt="Gypsy Cob" />
+        <div class="breed-card-content">
+          <h3>Gypsy Cob</h3>
+          <p>Friendly, intelligent, and devoted — perfect for families.</p>
+          <a href="breeds.html#golden-retriever">Learn More</a>
+        </div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="breed-card">
+        <img src="n4.jpg" alt="Irish Sport Horse" />
+        <div class="breed-card-content">
+          <h3>Irish Sport Horse</h3>
+          <p>Playful and adaptable, a charming little companion.</p>
+          <a href="breeds.html#french-bulldog">Learn More</a>
+        </div>
+      </div>
+      <div class="breed-card">
+        <img src="n5.jpg" alt="Highland Pony" />
+        <div class="breed-card-content">
+          <h3>Highland Pony</h3>
+          <p>Energetic and friendly, great for active lifestyles.</p>
+          <a href="breeds.html#siberian-husky">Learn More</a>
+        </div>
+      </div>
     </div>
   </section>
-<section>
-<div class="image-container">
-  <div class="image-wrapper">
-    <img src="b1.jpg" alt="horse 1" class="image">
-    <span class="enlarged-image-container">
-      <img src="b1.jpg" alt="horse 1" class="enlarged-image">
-    </span>  
+  <!-- Add this just before </body> -->
+
+<div id="newsletterPopup" class="newsletter-popup" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 10000;">
+  <div class="popup-content" style="background: #ff6f61; padding: 25px 30px; border-radius: 12px; color: white; max-width: 360px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.3); position: relative; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+    <h2 style="margin-top:0; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Subscribe to Our horse Newsletter!</h2>
+    <p style="margin-bottom: 20px; font-size: 1rem;">Get the latest updates, tips, and special offers.</p>
+    <form action="https://formspree.io/f/manovkeb" method="POST" style="display: flex; gap: 10px;">
+      <input type="email" name="email" placeholder="Your email address" required style="flex: 1; padding: 12px; border-radius: 6px; border: none; font-size: 1rem;" />
+      <button type="submit" style="background: white; color: #ff6f61; border: none; border-radius: 6px; padding: 12px 18px; font-weight: 700; cursor: pointer; transition: background 0.3s;">Subscribe</button>
+    </form>
+    <button id="closePopup" aria-label="Close newsletter popup" style="position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 24px; color: white; cursor: pointer;">✖</button>
   </div>
-  <div class="image-container">
-    <div class="image-wrapper">
-      <img src="b2.jpg" alt="horse 2" class="image">
-      <span class="enlarged-image-container">
-        <img src="b2.jpg" alt="horse 2" class="enlarged-image">
-      </span>  
-    </div>
-  </div> 
-</div>   
-<div class="image-container">
-  <div class="image-wrapper">
-    <img src="b3.jpg" alt="horse 1" class="image">
-    <span class="enlarged-image-container">
-      <img src="b3.jpg" alt="horse 1" class="enlarged-image">
-    </span>  
-  </div>
-  <div class="image-container">
-    <div class="image-wrapper">
-      <img src="b4.jpg" alt="horse 2" class="image">
-      <span class="enlarged-image-container">
-        <img src="b4.jpg" alt="horse 2" class="enlarged-image">
-      </span>  
-    </div>
-  </div> 
-</div> 
-<div class="image-container">
-  <div class="image-wrapper">
-    <img src="b5.jpg" alt="horse 1" class="image">
-    <span class="enlarged-image-container">
-      <img src="b5.jpg" alt="horse 1" class="enlarged-image">
-    </span>  
-  </div>
-  <div class="image-container">
-    <div class="image-wrapper">
-      <img src="b6.jpg" alt="horse 2" class="image">
-      <span class="enlarged-image-container">
-        <img src="b6.jpg" alt="horse 2" class="enlarged-image">
-      </span>  
-    </div>
-  </div> 
-</div>     
-<style>
-  .image-container{
-    display: flex;
-  }
-   .image-wrapper{
-    margin: 10px;
-  }
-  .image{
-    width: 200px;
-    height: 150px;
-    cursor: pointer;
-  }
-  .enlarged-image-container{
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    justify-content: center;
-    align-items: center;
-  }
-  .enlarged-image{
-    max-width: 500px;
-    max-height: 500px;
-  }
-  .show-enlarged-image{
-    display: flex;
-  }
-</style>
+</div>
+
 <script>
-  document.addEventListener('DOMContentLoaded',function(){
-    const images=document.querySelectorAll('.image');
-     
-    images.forEach((image) =>{
-      image.addEventListener('click',function(){
-        const enlargedimagecontainer = image.nextElementSibling;
-        enlargedimagecontainer.classList.toggle('show-enlarged-image');
-        enlargedimagecontainer.addEventListener('click',function(){
-          this.classList.remove('show-enlarged-image');
-        });
-      });
-      
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      document.getElementById('newsletterPopup').style.display = 'flex';
+    }, 7000);
+
+    document.getElementById('closePopup').addEventListener('click', () => {
+      document.getElementById('newsletterPopup').style.display = 'none';
     });
   });
 </script>
 
-</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-content">
-      <div>
-        <h2>GEYWOOD ACRES STABLE</h2>
-        <p>Elegant care for your horses.</p>
-      </div>
-      <div>
-        <h3>Explore</h3>
-        <ul>
-          <li><a href="breed.html">Boarding Info</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="caree.html">Care Tips</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Company</h3>
-        <ul>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="carrer.html">Careers</a></li>
-          <li><a href="cont.html">Contact</a></li>
-        </ul>
-      </div>
-      <div>
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#"><i class="fab fa-facebook-f"></i></a>
+  <footer>
+    <footer style="background:#055265; color:#a3ffe7; padding: 40px 20px; font-family: 'Segoe UI', sans-serif;">
+      <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+    
+        <!-- About Section -->
+        <div style="flex: 1 1 250px; min-width: 220px;">
+          <h3 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">GRYWOODACRESSTABLE</h3>
+          <p style="line-height: 1.5;">Your trusted source for adorable horses, expert care tips, and loving homes. Join our community of horse lovers today!</p>
         </div>
+    
+        <!-- Contact Info -->
+        <div style="flex: 1 1 220px; min-width: 220px;">
+          <h4 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">Contact Us</h4>
+          <p>Email: <a href="geywoodacresstableinfo@gmail.com" style="color:#a3ffe7; text-decoration:none;">geywoodacresstableinfo@gmail.com</a></p>
+          <p>Phone: <a href="tel:+447459919309" style="color:#a3ffe7; text-decoration:none;">+447459919309</a></p>
+          <p>Location: Geywood Acres Stable,pinner HA5,london</p>
+        </div>
+    
+       
+    
       </div>
-    </div>
-    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+    
+      <hr style="margin: 30px 0; border-color: #4dc499; opacity: 0.3;" />
+    
+      <div style="text-align: center; font-size: 0.9rem; color: #a3ffe7;">
+        &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+      </div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    AOS.init();
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
 
-    let slideIndex = 0;
-    const slides = document.getElementsByClassName("slide");
-    function showSlide(index) {
-      for (let i = 0; i < slides.length; i++) slides[i].classList.remove("active");
-      slides[index].classList.add("active");
-    }
-    function changeSlide(n) {
-      slideIndex += n;
-      if (slideIndex < 0) slideIndex = slides.length - 1;
-      if (slideIndex >= slides.length) slideIndex = 0;
-      showSlide(slideIndex);
-    }
-    function autoSlide() {
-      slideIndex = (slideIndex + 1) % slides.length;
-      showSlide(slideIndex);
-      setTimeout(autoSlide, 5000);
-    }
-    autoSlide();
-
-    const imgElement = document.getElementById("sliderImage");
-    const images = ["h1.jpg", "h2.jpg", "h14.jpg", "h4.jpg"];
-    let current = 0;
-    setInterval(() => {
-      current = (current + 1) % images.length;
-      imgElement.src = images[current];
-    }, 5000);
-
-    function openForm() {
-      document.getElementById('contactForm').style.display = 'block';
-    }
-    function closeForm() {
-      document.getElementById('contactForm').style.display = 'none';
-    }
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
   </script>
-
-  <!-- Live Chat (Tawk.to) -->
-  <script type="text/javascript">
-    var Tawk_API = Tawk_API || {}, Tawk_loadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = 'https://embed.tawk.to/YOUR_personal_ID/1gvmrsdpv';
-      s1.charset = 'UTF-8';
-      s0.parentNode.insertBefore(s1, s0);
-    })();
-  </script>
-
 </body>
 </html>

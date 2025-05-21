@@ -4,102 +4,244 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>GEYWOOD ACRES STABLE | Breeds</title>
-  <link rel="stylesheet" href="st.css"/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
-  <script defer src="fm.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Fonts & CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="st.css" />
+
+  <!-- Custom Styles -->
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    header {
+      background-color: #4d372d;
+      color: white;
+      padding: 20px 40px;
+    }
+    header h1 {
+      margin: 0;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+    }
+    nav a.active, nav a:hover {
+      background-color: #fff;
+      color: #4d372d;
+      border-radius: 5px;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: #eee;
+    }
+    .dark-mode header {
+      background-color: #1e1e1e;
+    }
+    .dark-mode nav a {
+      color: #eee;
+    }
+    .dark-mode nav a.active, .dark-mode nav a:hover {
+      background-color: #eee;
+      color: #1e1e1e;
+    }
+
+    .dark-mode-toggle {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background-color: #4d372d;
+      color: #fff;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 18px;
+      cursor: pointer;
+      z-index: 999;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: url('h16.jpg') center/cover no-repeat;
+      color: white;
+      background-blend-mode: overlay;
+      background-color: rgba(0,0,0,0.4);
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    .image-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 50px 30px;
+      background-color: #f8f8f8;
+    }
+
+    .breed-card {
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+    }
+    .breed-card:hover {
+      transform: translateY(-5px);
+    }
+    .breed-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .breed-card h2 {
+      font-size: 1.2rem;
+      margin: 15px;
+    }
+    .breed-card p {
+      margin: 0 15px 20px;
+      font-family: 'Roboto', sans-serif;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    footer h3 {
+      margin-top: 0;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.2rem;
+      transition: color 0.3s;
+    }
+    .social-icons a:hover {
+      color: #f9b233;
+    }
+
+    @media (max-width: 600px) {
+      nav ul {
+        flex-direction: column;
+      }
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-  <!-- Dark Mode Toggle -->
-  <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+<!-- Dark Mode Button -->
+<button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
 
-  <!-- Header -->
-  <header>
-    <h1>GEYWOOD ACRES STABLE</h1>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="breed.html" class="active">Breeds</a></li>
-        <li><a href="caree.html">Care Tips</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Videos</a></li>
-        <li><a href="deli.html">Delivery</a></li>
-        <li><a href="cont.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        
-      </ul>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <h1>GEYWOOD ACRES STABLE</h1>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="breed.html" class="active">Breeds</a></li>
+      <li><a href="caree.html">Care Tips</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="video.html">Videos</a></li>
+      <li><a href="deli.html">Delivery</a></li>
+      <li><a href="cont.html">Contact</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h2>Our Stunning Horse Breeds</h2>
-    <p>Discover the noble breeds we raise with care and passion</p>
+<!-- Hero -->
+<section class="hero" data-aos="fade-up">
+  <h2>Our Stunning Horse Breeds</h2>
+  <p>Discover the noble breeds we raise with care and passion</p>
+</section>
+
+<!-- Breed Cards -->
+<main>
+  <section class="image-row" data-aos="fade-up">
+    <div class="breed-card">
+      <img src="h7.jpg" alt="Gypsy Cob">
+      <h2>Gypsy Cob</h2>
+      <p>A majestic and gentle breed, known for its strength and beauty.</p>
+    </div>
+    <div class="breed-card">
+      <img src="h19.jpg" alt="Irish Sport Horse">
+      <h2>Irish Sport Horse</h2> 
+      <p>Versatile and athletic, ideal for various equestrian disciplines.</p>
+    </div>
+    <div class="breed-card">
+      <img src="h1.jpg" alt="Highland Pony">
+      <h2>Highland Pony</h2>
+      <p>Robust and hardy, well suited for the rugged highlands.</p>
+    </div>
+    <div class="breed-card">
+      <img src="h4.jpg" alt="Warmblood">
+      <h2>Warmblood</h2> 
+      <p>Elegant and powerful, perfect for dressage and jumping.</p>
+    </div>
+    <div class="breed-card">
+      <img src="h5.jpg" alt="Welsh Pony and Cob">
+      <h2>Welsh Pony and Cob</h2> 
+      <p>Smart and kind, perfect for kids and adults alike.</p>
+    </div>
+    <div class="breed-card">
+      <img src="h9.jpg" alt="Thoroughbred">
+      <h2>Thoroughbred</h2> 
+      <p>Fast and agile, ideal for racing and competitive events.</p>
+    </div>
   </section>
+</main>
 
-  <!-- Breed Cards Section -->
-  <main>
-    <section class="image-row" data-aos="fade-up">
-      <div class="breed-card">
-        <img src="h7.jpg" alt="Gypsy Cob">
-        <h2>Gypsy Cob</h2>
-        <p>A majestic and gentle breed, known for its strength and beauty.</p>
-      </div>
-      <div class="breed-card">
-        <img src="h19.jpg" alt="Irish Sport Horse">
-        <h2>Irish Sport Horse</h2> 
-        <p>Versatile and athletic, ideal for various equestrian disciplines.</p>
-      </div>
-      <div class="breed-card">
-        <img src="h1.jpg" alt="Highland Pony">
-        <h2>Highland Pony</h2>
-        <p>Robust and hardy, well suited for the rugged highlands.</p>
-      </div>
-      <div class="breed-card">
-        <img src="h4.jpg" alt="Warmblood">
-        <h2>Warmblood</h2> 
-        <p>Elegant and powerful, perfect for dressage and jumping.</p>
-      </div>
-      <div class="breed-card">
-        <img src="h5.jpg" alt="Welsh Pony and Cob">
-        <h2>Welsh Pony and Cob</h2> 
-        <p>Smart and kind, perfect for kids and adults alike.</p>
-      </div>
-      <div class="breed-card">
-        <img src="h9.jpg" alt="Thoroughbred">
-        <h2>Thoroughbred</h2> 
-        <p>Fast and agile, ideal for racing and competitive events.</p>
-      </div>
-    </section>
-  </main>
-  <script></script>
-
-  <!-- Footer -->
-  <footer>
-    <div>
-      <h3>Contact Us</h3>
-      <p>Email: geywoodacresstableinfo@gmail.com | Phone: 07451919309</p>
+<!-- Footer -->
+<footer>
+  <div>
+    <h3>Contact Us</h3>
+    <p>Email: geywoodacresstableinfo@gmail.com<br>Phone: 07451919309</p>
+  </div>
+  <div>
+    <h3>Follow Us</h3>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/share/19Z7qoPKDS/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook-f"></i></a>
     </div>
-    <div>
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-        </div>
-      </div>
-    </div>
-    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
-  </footer>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
+  </div>
+  <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+</footer>
 
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-    </script>
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
 </body>
 </html>

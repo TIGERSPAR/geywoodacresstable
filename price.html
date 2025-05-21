@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - GRYWOODACRESSTABLE</title>
+  <title>Pricing - GRYWOODACRESSTABLE</title>
   <link rel="stylesheet" href="style.css" />
-  <style> 
+  <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      line-height: 1.6;
+      margin: 0; padding: 0; 
     }
-
     .navbar {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -25,14 +23,12 @@
       top: 0;
       z-index: 1000;
     }
-
     .navbar .logo {
       font-size: 1.5rem;
       font-weight: 700;
       color: #ff6f61;
       cursor: default;
     }
-
     .navbar nav ul {
       list-style: none;
       margin: 0;
@@ -40,7 +36,6 @@
       display: flex;
       gap: 25px;
     }
-
     .navbar nav ul li a {
       text-decoration: none;
       color: #2c3e50;
@@ -49,13 +44,11 @@
       border-radius: 6px;
       transition: color 0.3s ease;
     }
-
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
       background: #ff6f61;
       color: white;
     }
-
     .dark-toggle {
       background: transparent;
       border: none;
@@ -67,7 +60,6 @@
       border-radius: 6px;
       transition: background 0.3s ease;
     }
-
     .dark-toggle:hover {
       background: #ff6f61;
       color: white;
@@ -77,70 +69,55 @@
       max-width: 900px;
       margin: 50px auto 70px;
       padding: 0 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
-    main h1 {
+    h1 {
       color: #ff6f61;
       text-align: center;
-      padding-top: 30px;
       font-weight: 800;
       letter-spacing: 2px;
+      margin-bottom: 20px;
     }
-
-    .intro {
-      padding: 20px 30px;
-      font-size: 1.15rem;
+    p.subtitle {
       text-align: center;
-      color: #3a4a59;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #3a5160;
     }
 
-    .team-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 30px 20px 50px;
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
 
-    .team-member {
-      flex: 1 1 250px;
-      max-width: 250px;
-      background: #f6f9fc;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      text-align: center;
-      padding: 25px 15px 30px;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .team-member img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #ff6f61;
-    }
-
-    .team-member h3 {
-      margin: 0 0 6px;
-      font-weight: 700;
+    .price-table th,
+    .price-table td {
+      padding: 18px 25px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+      font-size: 1.1rem;
       color: #2c3e50;
     }
 
-    .team-member p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #666;
+    .price-table th {
+      background-color: #ff6f61;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table tbody tr:hover {
+      background-color: #ffe6e1;
+      cursor: default;
     }
 
     footer {
@@ -153,59 +130,40 @@
     }
 
     /* Dark Mode */
-
     body.dark-mode {
       background: #121212;
       color: #ddd;
     }
-
     body.dark-mode .navbar {
       background: #1f1f1f;
       box-shadow: 0 2px 5px rgba(255,255,255,0.1);
     }
-
     body.dark-mode .navbar nav ul li a {
       color: #ccc;
     }
-
     body.dark-mode .navbar nav ul li a.active,
     body.dark-mode .navbar nav ul li a:hover {
       background: #ff6f61;
       color: #fff;
     }
-
     body.dark-mode .dark-toggle {
       color: #ff6f61;
     }
-
-    body.dark-mode main {
-      background: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
-    }
-
-    body.dark-mode .intro,
-    body.dark-mode .team-member h3 {
-      color: #ddd;
-    }
-
-    body.dark-mode .team-member p {
-      color: #bbb;
-    }
-
     body.dark-mode footer {
       background: #1a1a1a;
       color: #bbb;
     }
-
-    /* Responsive */
-    @media (max-width: 650px) {
-      .team-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .team-member {
-        max-width: 320px;
-      }
+    body.dark-mode .price-table {
+      background: #222;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
+      color: #ddd;
+    }
+    body.dark-mode .price-table th {
+      background-color: #ff6f61;
+      color: #fff;
+    }
+    body.dark-mode .price-table tbody tr:hover {
+      background-color: #ff8a7a44;
     }
   </style>
 </head>
@@ -215,11 +173,11 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html" class="active">About Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
         <li><a href="breeds.html">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="price.html" class="active">Pricing</a></li>
         <li><a href="adoption.html">Adoption</a></li>
         <li><a href="contact.html">Contact</a></li>
         <li><a href="delivary.html">Delivery</a></li>
@@ -229,28 +187,50 @@
   </header>
 
   <main>
-    <h1>About GRYWOODACRESSTABLE</h1>
-    <p class="intro">
-      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect furry companions through responsible breeding and adoption.
-    </p>
+    <h1>Our horse Pricing</h1>
+    <p class="subtitle">Find the perfect horse within your budget</p>
 
-    <section class="team-section">
-      <div class="team-member">
-        <img src="t2.jpeg" alt="Jane Doe - Founder" />
-        <h3>Jane Doe</h3>
-        <p>Founder &amp; Head Breeder</p>
-      </div>
-      <div class="team-member">
-        <img src="t3.jpeg" alt="Rose mary - Adoption Coordinator" />
-        <h3>Rose mary</h3>
-        <p>Adoption Coordinator</p>
-      </div>
-      <div class="team-member">
-        <img src="t6.jpeg" alt="Emily Clark - Puppy Care Specialist" />
-        <h3>Emily Clark</h3>
-        <p>horse Care Specialist</p>
-      </div>
-    </section>
+    <table class="price-table" aria-label="horse pricing table">
+      <thead>
+        <tr>
+          <th>Breed</th>
+          <th>Starting Price</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gypsy cob</td>
+          <td>$900</td>
+          <td>Healthy, vaccinated, includes starter kit</td>
+        </tr>
+        <tr>
+          <td>Irish sport horse</td>
+          <td>$1,500</td>
+          <td>Rare breed, high demand</td>
+        </tr>
+        <tr>
+          <td>Highland pony</td>
+          <td>$700</td>
+          <td>Great family horse</td>
+        </tr>
+        <tr>
+          <td>Warm blood</td>
+          <td>$800</td>
+          <td>Friendly and playful</td>
+        </tr>
+        <tr>
+          <td>Welsh pony and cob</td>
+          <td>$1,000</td>
+          <td>Highly intelligent, active</td>
+        </tr>
+        <tr>
+          <td>Thoroughbred</td>
+          <td>$500</td>
+          <td>good for trips</td>
+        </tr>
+      </tbody>
+    </table>
   </main>
 
   <footer>
@@ -263,9 +243,8 @@
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
-
     window.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('darkMode') === 'true') {
+      if(localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
     });

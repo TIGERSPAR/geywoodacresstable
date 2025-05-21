@@ -3,17 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>About Us - GRYWOODACRESSTABLE</title>
+  <title>Delivery - GRYWOODACRESSTABLE</title>
   <link rel="stylesheet" href="style.css" />
-  <style> 
+  <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0;
-      line-height: 1.6;
+      margin: 0; padding: 0; 
     }
-
     .navbar {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -25,14 +23,12 @@
       top: 0;
       z-index: 1000;
     }
-
     .navbar .logo {
       font-size: 1.5rem;
       font-weight: 700;
       color: #ff6f61;
       cursor: default;
     }
-
     .navbar nav ul {
       list-style: none;
       margin: 0;
@@ -40,7 +36,6 @@
       display: flex;
       gap: 25px;
     }
-
     .navbar nav ul li a {
       text-decoration: none;
       color: #2c3e50;
@@ -49,13 +44,11 @@
       border-radius: 6px;
       transition: color 0.3s ease;
     }
-
     .navbar nav ul li a:hover,
     .navbar nav ul li a.active {
       background: #ff6f61;
       color: white;
     }
-
     .dark-toggle {
       background: transparent;
       border: none;
@@ -67,7 +60,6 @@
       border-radius: 6px;
       transition: background 0.3s ease;
     }
-
     .dark-toggle:hover {
       background: #ff6f61;
       color: white;
@@ -77,70 +69,40 @@
       max-width: 900px;
       margin: 50px auto 70px;
       padding: 0 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
     }
 
-    main h1 {
+    h1 {
       color: #ff6f61;
       text-align: center;
-      padding-top: 30px;
       font-weight: 800;
       letter-spacing: 2px;
+      margin-bottom: 20px;
     }
-
-    .intro {
-      padding: 20px 30px;
-      font-size: 1.15rem;
+    p.subtitle {
       text-align: center;
-      color: #3a4a59;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #3a5160;
     }
 
-    .team-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 30px 20px 50px;
-    }
-
-    .team-member {
-      flex: 1 1 250px;
-      max-width: 250px;
-      background: #f6f9fc;
+    .delivery-info {
+      background: white;
       border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      text-align: center;
-      padding: 25px 15px 30px;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .team-member img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #ff6f61;
-    }
-
-    .team-member h3 {
-      margin: 0 0 6px;
-      font-weight: 700;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
       color: #2c3e50;
+      line-height: 1.6;
+      font-size: 1.1rem;
     }
 
-    .team-member p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #666;
+    ul.delivery-list {
+      margin-top: 20px;
+      padding-left: 20px;
+      color: #ff6f61;
+    }
+
+    ul.delivery-list li {
+      margin-bottom: 12px;
     }
 
     footer {
@@ -153,59 +115,33 @@
     }
 
     /* Dark Mode */
-
     body.dark-mode {
       background: #121212;
       color: #ddd;
     }
-
     body.dark-mode .navbar {
       background: #1f1f1f;
       box-shadow: 0 2px 5px rgba(255,255,255,0.1);
     }
-
     body.dark-mode .navbar nav ul li a {
       color: #ccc;
     }
-
     body.dark-mode .navbar nav ul li a.active,
     body.dark-mode .navbar nav ul li a:hover {
       background: #ff6f61;
       color: #fff;
     }
-
     body.dark-mode .dark-toggle {
       color: #ff6f61;
     }
-
-    body.dark-mode main {
-      background: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
-    }
-
-    body.dark-mode .intro,
-    body.dark-mode .team-member h3 {
-      color: #ddd;
-    }
-
-    body.dark-mode .team-member p {
-      color: #bbb;
-    }
-
     body.dark-mode footer {
       background: #1a1a1a;
       color: #bbb;
     }
-
-    /* Responsive */
-    @media (max-width: 650px) {
-      .team-section {
-        flex-direction: column;
-        align-items: center;
-      }
-      .team-member {
-        max-width: 320px;
-      }
+    body.dark-mode .delivery-info {
+      background: #222;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
+      color: #ddd;
     }
   </style>
 </head>
@@ -215,41 +151,35 @@
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html" class="active">About Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
         <li><a href="breeds.html">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
+        <li><a href="video.html">Videos</a></li>
         <li><a href="price.html">Pricing</a></li>
         <li><a href="adoption.html">Adoption</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
+        <li><a href="delivary.html" class="active">Delivery</a></li>
       </ul>
     </nav>
     <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
   </header>
 
   <main>
-    <h1>About GRYWOODACRESSTABLE</h1>
-    <p class="intro">
-      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect furry companions through responsible breeding and adoption.
-    </p>
+    <h1>Our Delivery Services</h1>
+    <p class="subtitle">Bringing your new horse right to your doorstep with care and love.</p>
 
-    <section class="team-section">
-      <div class="team-member">
-        <img src="t2.jpeg" alt="Jane Doe - Founder" />
-        <h3>Jane Doe</h3>
-        <p>Founder &amp; Head Breeder</p>
-      </div>
-      <div class="team-member">
-        <img src="t3.jpeg" alt="Rose mary - Adoption Coordinator" />
-        <h3>Rose mary</h3>
-        <p>Adoption Coordinator</p>
-      </div>
-      <div class="team-member">
-        <img src="t6.jpeg" alt="Emily Clark - Puppy Care Specialist" />
-        <h3>Emily Clark</h3>
-        <p>horse Care Specialist</p>
-      </div>
+    <section class="delivery-info">
+      <p>At GRYWOODACRESSTABLE, we understand how exciting it is to welcome a new furry friend into your home. To make this experience as smooth and joyful as possible, we offer safe and reliable delivery services across the USA.</p>
+
+      <ul class="delivery-list">
+        <li><strong>Safe Transportation:</strong> Our horses travel in comfortable, climate-controlled vehicles with professional handlers.</li>
+        <li><strong>Nationwide Coverage:</strong> We deliver to all major cities and many rural areas—just ask us if you have special location needs.</li>
+        <li><strong>Scheduling Flexibility:</strong> Choose a delivery date that works best for you.</li>
+        <li><strong>Health Guarantee:</strong> Each horse is checked by a vet before delivery, with all vaccinations up to date.</li>
+        <li><strong>Tracking & Updates:</strong> Get real-time tracking and regular updates on your horse's journey.</li>
+      </ul>
+
+      <p>If you have questions or need custom arrangements, please <a href="contact.html" style="color:#ff6f61; font-weight:bold; text-decoration:none;">contact us</a>. We’re happy to assist you!</p>
     </section>
   </main>
 
@@ -263,9 +193,8 @@
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
-
     window.addEventListener('DOMContentLoaded', () => {
-      if (localStorage.getItem('darkMode') === 'true') {
+      if(localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
     });
