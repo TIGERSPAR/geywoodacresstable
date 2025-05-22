@@ -2,199 +2,350 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>GEYWOOD ACRES STABLE | Videos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Videos - GRYWOODACRESSTABLE</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <style>
     body {
-      font-family: 'Roboto', sans-serif;
-      background-color: #f4f4f4;
+      background: #f9fbfd;
+      color: #2c3e50;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0;
+      line-height: 1.6;
+    }
+    .navbar { 
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 50px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .navbar .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ff6f61;
+      cursor: default;
+    }
+    .navbar nav ul {
+      list-style: none;
       margin: 0;
       padding: 0;
+      display: flex;
+      gap: 25px;
     }
-
-    header {
-      background: #292e2f;
+    .navbar nav ul li a {
+      text-decoration: none;
+      color: #2c3e50;
+      font-weight: 600;
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: color 0.3s ease;
+    }
+    .navbar nav ul li a:hover,
+    .navbar nav ul li a.active {
+      background: #ff6f61;
       color: white;
-      text-align: center;
-      padding: 20px;
     }
-
-    header {
-  background-color: #292e2f;
-  color: #fff;
-  padding: 1rem 2rem;
-  text-align: center;
-  position: relative;
-}
-header h1 {
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
-}
-nav ul {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-nav a {
-  color: #fff;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-nav a:hover,
-nav a.active {
-  color: #f1c40f;
-}
-
-
+    .dark-toggle {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #ff6f61;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+    .dark-toggle:hover {
+      background: #ff6f61;
+      color: white;
+    }
     main {
-      padding: 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-      background-color: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      border-radius: 10px;
+      max-width: 1000px;
+      margin: 50px auto 70px;
+      padding: 0 20px;
     }
-
-    h2 {
+    h1 {
+      color: #ff6f61;
       text-align: center;
-      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 2px;
       margin-bottom: 20px;
     }
-
-    .video-grid {
+    .video-gallery {
+      max-width: 1000px;
+      margin: 40px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 30px;
+      padding: 0 20px 60px;
     }
-
-    iframe {
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    .video-card:hover {
+      transform: translateY(-8px);
+    }
+    .video-card video {
       width: 100%;
-      height: 200px;
-      border: none;
-      border-radius: 10px;
+      height: auto;
+      display: block;
     }
-
+    .video-info {
+      padding: 15px 20px;
+      color: #055265;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
     footer {
+      background: #055265;
+      color: white;
       text-align: center;
-      margin-top: 40px;
-      padding: 10px;
-      background-color: #292e2f;
-      color: white;
+      padding: 20px 0;
+      font-size: 0.95rem;
     }
-
-    .dark-mode-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #0072ff;
-      color: white;
-      padding: 10px;
-      border: none;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-
-    /* Dark mode */
+    /* Dark mode styles */
     body.dark-mode {
-      background-color: #121212;
-      color: white;
+      background: #1e1e1e;
+      color: #eee;
     }
-
-    body.dark-mode header,
-    body.dark-mode nav ul,
-    body.dark-mode footer {
-      background-color: #1a1a1a;
+    body.dark-mode .navbar {
+      background-color: #2a2a2a;
+      color: #4dc499;
     }
-
-    body.dark-mode nav ul li a {
+    body.dark-mode .navbar nav ul li a {
       color: #ccc;
     }
-
-    body.dark-mode nav ul li a.active,
-    body.dark-mode nav ul li a:hover {
-      background-color: #333;
+    body.dark-mode .navbar nav ul li a.active,
+    body.dark-mode .navbar nav ul li a:hover {
+      color: #a3ffe7;
     }
-
-    body.dark-mode main {
-      background-color: #1e1e1e;
+    body.dark-mode .page-header {
+      background: #2a2a2a;
+      color: #4dc499;
+    }
+    body.dark-mode .video-card {
+      background: #333;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      color: #a3ffe7;
+    }
+    body.dark-mode footer {
+      background: #2a2a2a;
+      color: #a3ffe7;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>GEYWOOD ACRES STABLE</h1>
+  <header class="navbar">
+    <div class="logo">GRYWOODACRESSTABLE</div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="breed.html">Breeds</a></li>
-        <li><a href="caree.html">Care Tips</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="breeds.html">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="video.html" class="active">Videos</a></li>
-        <li><a href="deli.html">Delivery</a></li>
-        <li><a href="cont.html">Contact</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
+        <li><a href="price.html">Pricing</a></li>
+        <li><a href="adoption.html">Adoption</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="delivary.html">Delivery</a></li>
+       
       </ul>
     </nav>
+    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
   </header>
 
-  <main>
-    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+  <section class="page-header">
+    <h1>Watch Our horses</h1>
+    <p>Enjoy adorable videos of our furry friends playing, learning, and growing.</p>
+  </section>
 
-    <h2>Horse Videos</h2>
-    <p style="text-align: center;">Watch our horses in action — training, playing, and showing off their grace.</p>
-
-    <div class="video-grid" data-aos="fade-up">
-      <iframe src="v1.mp4" title="Horse galloping"></iframe>
-      <iframe src="v2.mp4" title="Horse show jumping"></iframe>
-      <iframe src="v3.mp4" title="Horse grooming and care"></iframe>
-      <iframe src="v4.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v5.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v6.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v7.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v8.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v9.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v10.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v11.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v12.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v13.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v14.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v15.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v16.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v17.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v18.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v19.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v20.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v21.mp4" title="Foal playing in the field"></iframe>
-      <iframe src="v22.mp4" title="Foal playing in the field"></iframe>
+  <section class="video-gallery">
+    <div class="video-card">
+      <video controls poster="thumbnails/puppy1.jpg">
+        <source src="v1.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
     </div>
-  </main>
+
+    <div class="video-card">
+      <video controls poster="thumbnails/puppy2.jpg">
+        <source src="v2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+
+    <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v3.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+
+    <div class="video-card">
+      <video controls poster="thumbnails/puppy4.jpg">
+        <source src="v4.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+     <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v5.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v6.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v7.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v8.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v9.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v10.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v11.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v12.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v13.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v14.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v15.mp41" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v16.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v17.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v18.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v19.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v20.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v21.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+ <div class="video-card">
+      <video controls poster="thumbnails/puppy3.jpg">
+        <source src="v22.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-info"></div>
+    </div>
+  </section>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+  </script>
 
   <footer>
-    <div>
-        <h3>Contact Us</h3>
-        <p>Email:  geywoodacresstableinfo@gmail.com | Phone: 07459919309</p>
-      </div>
-      <div>
-          <h3>Follow Us</h3>
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-          </div>
-        </div>
-      </div>
-    <p>&copy; 2023 GEYWOOD ACRES STABLE. All rights reserved.</p>
+    <p>&copy; 2025 GRYWOODACRESSTABLE. All rights reserved.</p>
   </footer>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-  </script>
 </body>
 </html>
