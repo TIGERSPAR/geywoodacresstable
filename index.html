@@ -10,13 +10,14 @@
       background: #f9fbfd;
       color: #2c3e50;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0; 
+      margin: 0;
+      padding: 0;
     }
 
     .navbar {
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 50px 30px;
+      padding: 15px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -26,10 +27,9 @@
     }
 
     .navbar .logo {
-      font-size: 1.5rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #ff6f61;
-      cursor: default;
     }
 
     .navbar nav ul {
@@ -37,7 +37,7 @@
       margin: 0;
       padding: 0;
       display: flex;
-      gap: 25px;
+      gap: 15px;
     }
 
     .navbar nav ul li a {
@@ -58,7 +58,7 @@
     .dark-toggle {
       background: transparent;
       border: none;
-      font-size: 1.2rem;
+      font-size: 1rem;
       cursor: pointer;
       color: #ff6f61;
       font-weight: 700;
@@ -74,7 +74,7 @@
 
     .hero {
       background: url('n2.jpg') no-repeat center center/cover;
-      height: 70vh;
+      height: 65vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -86,218 +86,126 @@
     }
 
     .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 15px;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
       font-weight: 900;
-      letter-spacing: 2px;
     }
 
     .hero p {
-      font-size: 1.4rem;
-      max-width: 600px;
-      margin-bottom: 30px;
-      font-weight: 600;
+      font-size: 1.1rem;
+      max-width: 90%;
+      margin-bottom: 20px;
     }
 
     .hero .btn {
       background: #ff6f61;
       color: white;
-      padding: 15px 35px;
-      font-weight: 700;
-      font-size: 1.1rem;
+      padding: 12px 24px;
+      font-size: 1rem;
       border: none;
       border-radius: 30px;
-      cursor: pointer;
       text-decoration: none;
       transition: background 0.3s ease;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.4);
-    }
-
-    .hero .btn:hover {
-      background: #e55a4e;
-      box-shadow: 0 10px 25px rgba(229,90,78,0.6);
     }
 
     .featured-breeds {
       max-width: 1100px;
-      margin: 50px auto 80px;
+      margin: 40px auto;
       padding: 0 20px;
       text-align: center;
-    }
-
-    .featured-breeds h2 {
-      font-size: 2.4rem;
-      color: #ff6f61;
-      margin-bottom: 30px;
-      font-weight: 700;
-      letter-spacing: 1.5px;
     }
 
     .breed-cards {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 20px;
       justify-content: center;
     }
 
     .breed-card {
       background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
-      width: 280px;
+      border-radius: 12px;
+      width: 90%;
+      max-width: 280px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
       overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s ease;
       display: flex;
       flex-direction: column;
-    }
-
-    .breed-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
     }
 
     .breed-card img {
       width: 100%;
-      height: 190px;
+      height: 180px;
       object-fit: cover;
     }
 
     .breed-card-content {
-      padding: 20px;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      padding: 16px;
     }
 
     .breed-card-content h3 {
-      margin: 0 0 12px 0;
-      font-weight: 700;
-      color: #2c3e50;
+      font-size: 1.2rem;
+      margin: 0 0 8px 0;
     }
 
     .breed-card-content p {
-      color: #555;
       font-size: 0.95rem;
-      line-height: 1.4;
-      flex-grow: 1;
+      color: #444;
     }
 
     .breed-card-content a {
-      margin-top: 15px;
-      text-align: center;
-      background: #ff6f61;
-      color: white;
-      padding: 10px 20px;
-      font-weight: 700;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s ease;
       display: inline-block;
-    }
-
-    .breed-card-content a:hover {
-      background: #e55a4e;
+      margin-top: 10px;
+      padding: 8px 16px;
+      background: #ff6f61;
+      color: #fff;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      text-decoration: none;
     }
 
     footer {
       text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
+      font-size: 0.8rem;
+      padding: 20px;
+      color: #aaa;
       background: #fafafa;
-      margin-top: 60px;
     }
 
-    /* Dark mode styles */
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
+    @media (max-width: 768px) {
+      .navbar nav ul {
+        display: none;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 180px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        padding: 10px 0;
+      }
 
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
+      .navbar nav ul.active {
+        display: flex;
+      }
 
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
-      color: #fff;
-    }
-
-    body.dark-mode .dark-toggle {
-      color: #ff6f61;
-    }
-
-    body.dark-mode .hero {
-      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
-    }
-
-    body.dark-mode .featured-breeds h2 {
-      color: #ff6f61;
-    }
-
-    body.dark-mode .breed-card {
-      background: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
-    }
-
-    body.dark-mode .breed-card-content h3,
-    body.dark-mode .breed-card-content p {
-      color: #ddd;
-    }
-
-    body.dark-mode .breed-card-content a {
-      background: #ff6f61;
-      color: white;
-    }
-
-    body.dark-mode .breed-card-content a:hover {
-      background: #e55a4e;
-    }
-
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #bbb;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .breed-cards {
-        justify-content: center;
+      .navbar #menuToggle {
+        display: block;
       }
     }
-
-    @media (max-width: 600px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
-      .hero p {
-        font-size: 1.1rem;
-      }
-      .breed-card {
-        width: 100%;
-      }
-    }
-    body.dark-mode #newsletterPopup .popup-content {
-  background: #ff8a7a;
-  box-shadow: 0 8px 20px rgba(255, 140, 122, 0.8);
-}
-
   </style>
 </head>
 <body>
-   <header class="navbar">
+  <header class="navbar">
     <button id="menuToggle" style="display:none; font-size: 1.5rem; background: none; border: none; color: #ff6f61; cursor: pointer;">☰</button>
 
     <div class="logo">GRYWOODACRESSTABLE</div>
     <nav id="navbarMenu">
+      <button id="menuToggle" class="menu-toggle">☰</button>
+
+</button>
+
   <ul>
     <!-- your list items -->
      <li><a href="index.html">Home</a></li>
@@ -375,12 +283,10 @@
       document.getElementById('newsletterPopup').style.display = 'none';
     });
   });
-  const toggleMenuBtn = document.getElementById('menuToggle');
-const navbarMenu = document.getElementById('navbarMenu');
-
-toggleMenuBtn.addEventListener('click', () => {
-  navbarMenu.classList.toggle('active');
+  document.getElementById('menuToggle').addEventListener('click', () => {
+  document.querySelector('.navbar nav').classList.toggle('active');
 });
+
 
 </script>
 
@@ -425,6 +331,23 @@ toggleMenuBtn.addEventListener('click', () => {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    window.scrollTo({
+      top: target.offsetTop - 80, // Adjust offset for fixed header
+      behavior: 'smooth'
+    });
+  });
+});
+
+  </script>
+  <!-- Content Here (same as previous but simplified for mobile) -->
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.querySelector('.navbar nav ul').classList.toggle('active');
     });
   </script>
 </body>
