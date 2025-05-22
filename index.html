@@ -293,24 +293,27 @@
   </style>
 </head>
 <body>
-  <header class="navbar">
+   <header class="navbar">
+    <button id="menuToggle" style="display:none; font-size: 1.5rem; background: none; border: none; color: #ff6f61; cursor: pointer;">☰</button>
+
     <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
+    <nav id="navbarMenu">
+  <ul>
+    <!-- your list items -->
+     <li><a href="index.html">Home</a></li>
         <li><a href="aboutus.html">About Us</a></li>
         <li><a href="breeds.html">Breeds</a></li>
         <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">pricing</a></li>
+        <li><a href="video.html">Videos</a></li>
+        <li><a href="price.html">Pricing</a></li>
         <li><a href="adoption.html">Adoption</a></li>
         <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-       
-      </ul>
-    </nav>
+        <li><a href="delivary.html" class="active">Delivery</a></ li>
+  </ul>
+</nav>
     <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
   </header>
+
 
   <section class="hero">
     <h1>Welcome to our stable</h1>
@@ -322,7 +325,7 @@
     <h2>Featured Breeds</h2>
     <div class="breed-cards">
       <div class="breed-card">
-        <img src="n3.jpg" alt="Gypsy Cob" />
+        <img src="br2.jpeg" alt="Gypsy Cob" />
         <div class="breed-card-content">
           <h3>Gypsy Cob</h3>
           <p>Friendly, intelligent, and devoted — perfect for families.</p>
@@ -330,7 +333,7 @@
         </div>
       </div>
       <div class="breed-card">
-        <img src="n4.jpg" alt="Irish Sport Horse" />
+        <img src="br4.jpeg" alt="Irish Sport Horse" />
         <div class="breed-card-content">
           <h3>Irish Sport Horse</h3>
           <p>Playful and adaptable, a charming little companion.</p>
@@ -338,13 +341,14 @@
         </div>
       </div>
       <div class="breed-card">
-        <img src="n5.jpg" alt="Highland Pony" />
+        <img src="br6.jpeg" alt="Highland Pony" />
         <div class="breed-card-content">
           <h3>Highland Pony</h3>
           <p>Energetic and friendly, great for active lifestyles.</p>
           <a href="breeds.html#siberian-husky">Learn More</a>
         </div>
       </div>
+     
     </div>
   </section>
   <!-- Add this just before </body> -->
@@ -371,6 +375,13 @@
       document.getElementById('newsletterPopup').style.display = 'none';
     });
   });
+  const toggleMenuBtn = document.getElementById('menuToggle');
+const navbarMenu = document.getElementById('navbarMenu');
+
+toggleMenuBtn.addEventListener('click', () => {
+  navbarMenu.classList.toggle('active');
+});
+
 </script>
 
 
