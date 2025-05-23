@@ -294,13 +294,13 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
-      padding: 40px 20px;
+      padding: 20px 20px;
       background-color: #f9f9f9;
     }
     .image-wrapper {
       position: relative;
-      width: 200px;
-      height: 150px;
+      width: 300px;
+      height: 350px;
       cursor: pointer;
     }
     .image-wrapper img {
@@ -313,7 +313,24 @@
     .image-wrapper img:hover {
       transform: scale(1.05);
     }
-    
+     .enlarged-image-container {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0, 0, 0, 0.85);
+      justify-content: center;
+      align-items: center;
+    }
+    .enlarged-image-container img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 8px;
+    }
+    .enlarged-image-container.show {
+      display: flex;
+    }
   </style>
 </head>
 <body>
@@ -380,6 +397,10 @@
   <div class="image-wrapper"><img src="b5.jpg" alt="Horse 5"></div>
   <div class="image-wrapper"><img src="b6.jpg" alt="Horse 6"></div>
 </section>
+<!-- Enlarge Modal -->
+<div id="enlargedModal" class="enlarged-image-container">
+  <img id="enlargedImage" src="" alt="Enlarged Horse">
+</div>
 
   <!-- Add this just before </body> -->
 
@@ -396,6 +417,7 @@
 </div>
 
 <script>
+  AOS.init();
   window.addEventListener('load', () => {
     setTimeout(() => {
       document.getElementById('newsletterPopup').style.display = 'flex';
@@ -409,6 +431,21 @@
   document.querySelector('.navbar nav').classList.toggle('active');
 });
 
+  // Image Enlarge
+  const galleryImages = document.querySelectorAll('.image-wrapper img');
+  const enlargedModal = document.getElementById('enlargedModal');
+  const enlargedImage = document.getElementById('enlargedImage');
+
+  galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+      enlargedImage.src = img.src;
+      enlargedModal.classList.add('show');
+    });
+  });
+
+  enlargedModal.addEventListener('click', () => {
+    enlargedModal.classList.remove('show');
+  });
 
 </script>
 
