@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Breeds - GRYWOODACRESSTABLE</title>
-  <link rel="stylesheet" href="style.css" /> 
+  <meta name="description" content="Explore our popular horse breeds including Gypsy Cob, Irish Sport Horse, and more at GRYWOODACRESSTABLE." />
+  <meta name="keywords" content="horse breeds, Gypsy Cob, Highland Pony, Irish Sport Horse, GRYWOODACRESSTABLE" />
+  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background: #f9fbfd;
@@ -159,32 +161,36 @@
       background: #1a1a1a;
       color: #bbb;
     }
+
   </style>
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html" class="active">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html" class="active">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivary.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
     <h1>Popular Breeds at GRYWOODACRESSTABLE</h1>
     <div class="breed-grid">
       <article class="breed-card">
-        <img src="br2.jpeg" alt="Gypsy Cob" />
+        <img src="br2.jpeg" alt="Gypsy Cob horse" loading="lazy" />
         <div class="breed-info">
           <h3>Gypsy Cob</h3>
           <p>Heavy, feathered, and kind-tempered—great family horses, often used for driving and happy hacking.</p>
@@ -192,7 +198,7 @@
       </article>
 
       <article class="breed-card">
-        <img src="br4.jpeg" alt="Irish Sport Horse" />
+        <img src="br4.jpeg" alt="Irish Sport Horse" loading="lazy" />
         <div class="breed-info">
           <h3>Irish Sport Horse</h3>
           <p>Cross of Irish Draught and Thoroughbred—bold, athletic, and popular for eventing and all-round riding.</p>
@@ -200,7 +206,7 @@
       </article>
 
       <article class="breed-card">
-        <img src="br6.jpeg" alt="Highland Pony" />
+        <img src="br6.jpeg" alt="Highland Pony" loading="lazy" />
         <div class="breed-info">
           <h3>Highland Pony</h3>
           <p>Hardy native Scottish pony, known for strength, calm nature, and surefootedness—great for trekking and family use.</p>
@@ -208,34 +214,36 @@
       </article>
 
       <article class="breed-card">
-        <img src="br3.jpeg" alt="Warmblood" />
+        <img src="br3.jpeg" alt="Warmblood horse" loading="lazy" />
         <div class="breed-info">
           <h3>Warmblood</h3>
-          <p>Athletic sport horse bred for disciplines like dressage and jumping—calmer than Thoroughbreds, popular in competitions</p>
+          <p>Athletic sport horse bred for disciplines like dressage and jumping—calmer than Thoroughbreds, popular in competitions.</p>
         </div>
       </article>
+
       <article class="breed-card">
-        <img src="br5.jpeg" alt="Welsh Pony and Cob" />
+        <img src="br5.jpeg" alt="Welsh Pony and Cob" loading="lazy" />
         <div class="breed-info">
           <h3>Welsh Pony and Cob</h3>
           <p>Strong, flashy native breed with stamina and presence—versatile for riding, driving, and showing.</p>
         </div>
       </article>
-       </article>
+
       <article class="breed-card">
-        <img src="br1.jpeg" alt="Thoroughbred" />
+        <img src="br1.jpeg" alt="Thoroughbred horse" loading="lazy" />
         <div class="breed-info">
           <h3>Thoroughbred</h3>
-          <p>Fast, sensitive, and athletic—primarily bred for racing but often retrained for eventing and jumping</p>
+          <p>Fast, sensitive, and athletic—primarily bred for racing but often retrained for eventing and jumping.</p>
         </div>
       </article>
-       <article class="breed-card">
-        <img src="br8.jpeg" alt="Section A Pony" />
+
+      <article class="breed-card">
+        <img src="br8.jpeg" alt="Section A Pony" loading="lazy" />
         <div class="breed-info">
           <h3>Section A Pony</h3>
           <p>A small, hardy native pony known for its refined looks, intelligence, and great movement. Ideal for lead rein and first ridden classes—popular with children due to their size and character.</p>
         </div>
-      </article>  
+      </article>
     </div>
   </main>
 
@@ -255,6 +263,11 @@
         document.body.classList.add('dark-mode');
       }
     });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
   </script>
+  <script src="fm.js"></script>
 </body>
 </html>

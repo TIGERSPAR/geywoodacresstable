@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us - GRYWOODACRESSTABLE</title>
+  <meta name="description" content="Meet the dedicated team behind GRYWOODACRESSTABLE. Learn about our mission to provide loving homes to horses since 2010." />
+  <meta name="keywords" content="about us, team, horse care, stable, adoption, horse breeders" />
   <link rel="stylesheet" href="style.css" />
-  <style> 
+   <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
@@ -211,58 +213,61 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html" class="active">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html" class="active">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivary.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
     <h1>About GRYWOODACRESSTABLE</h1>
     <p class="intro">
-      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect furry companions through responsible breeding and adoption.
+      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect equine companions through responsible breeding and adoption.
     </p>
 
     <section class="team-section">
       <div class="team-member">
-        <img src="t2.jpeg" alt="Jane Doe - Founder" />
+        <img src="t2.jpeg" alt="Jane Doe - Founder" loading="lazy" />
         <h3>Jane Doe</h3>
-        <p>Founder </p>
+        <p>Founder</p>
       </div>
       <div class="team-member">
-        <img src="t3.jpeg" alt="Rose mary - Adoption Coordinator" />
-        <h3>Rose mary</h3>
+        <img src="t3.jpeg" alt="Rose Mary - Adoption Coordinator" loading="lazy" />
+        <h3>Rose Mary</h3>
         <p>Adoption Coordinator</p>
       </div>
       <div class="team-member">
-        <img src="t6.jpeg" alt="Emily Clark -  Care Specialist" />
+        <img src="t6.jpeg" alt="Emily Clark - Horse Care Specialist" loading="lazy" />
         <h3>Emily Clark</h3>
-        <p>horse Care Specialist</p>
+        <p>Horse Care Specialist</p>
       </div>
-       <div class="team-member">
-        <img src="t5.jpeg" alt="Emily Clark -  Care Specialist" />
-        <h3>bella havort </h3>
+      <div class="team-member">
+        <img src="t5.jpeg" alt="Bella Havort - Head Breeder" loading="lazy" />
+        <h3>Bella Havort</h3>
         <p>Head Breeder</p>
       </div>
       <div class="team-member">
-        <img src="t4.jpeg" alt="Emily Clark -  Care Specialist" />
-        <h3>john & Abigial</h3>
-        <p>In charge of training horses</p>
+        <img src="t4.jpeg" alt="John & Abigail - Horse Trainers" loading="lazy" />
+        <h3>John & Abigail</h3>
+        <p>In Charge of Training Horses</p>
       </div>
       <div class="team-member">
-        <img src="t7.jpeg" alt="Emily Clark -  Care Specialist" />
-        <h3>Henry &amp; tracy </h3>
+        <img src="t7.jpeg" alt="Henry & Tracy - Riders" loading="lazy" />
+        <h3>Henry & Tracy</h3>
         <p>Riders</p>
       </div>
     </section>
@@ -284,6 +289,11 @@
         document.body.classList.add('dark-mode');
       }
     });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
   </script>
+  <script src="fm.js"></script>
 </body>
 </html>

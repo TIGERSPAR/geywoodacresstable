@@ -30,14 +30,17 @@
       color: #ff6f61;
       cursor: default;
     }
-    .navbar nav ul {
+    nav {
+      position: relative;
+    }
+    .nav-links {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
       gap: 25px;
     }
-    .navbar nav ul li a {
+    .nav-links li a {
       text-decoration: none;
       color: #2c3e50;
       font-weight: 600;
@@ -45,8 +48,8 @@
       border-radius: 6px;
       transition: color 0.3s ease;
     }
-    .navbar nav ul li a:hover,
-    .navbar nav ul li a.active {
+    .nav-links li a:hover,
+    .nav-links li a.active {
       background: #ff6f61;
       color: white;
     }
@@ -122,11 +125,11 @@
       background-color: #2a2a2a;
       color: #4dc499;
     }
-    body.dark-mode .navbar nav ul li a {
+    body.dark-mode .nav-links li a {
       color: #ccc;
     }
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
+    body.dark-mode .nav-links li a.active,
+    body.dark-mode .nav-links li a:hover {
       color: #a3ffe7;
     }
     body.dark-mode .page-header {
@@ -142,26 +145,81 @@
       background: #2a2a2a;
       color: #a3ffe7;
     }
+
+    /* Mobile menu toggle button */
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      color: #ff6f61;
+      cursor: pointer;
+    }
+
+    /* Mobile Styles */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 20px 15px;
+      }
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 0;
+        background: #fff;
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        width: 200px;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 1001;
+      }
+      .nav-links.open {
+        transform: translateX(0);
+      }
+      .nav-links li {
+        margin: 10px 0;
+        text-align: right;
+        padding: 0 20px;
+      }
+      .nav-links li a {
+        display: block;
+        font-size: 1.1rem;
+      }
+    }
+
+    .page-header {
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      padding: 0 20px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" class="active">Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-       
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">&#9776;</button>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html" class="active">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivary.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <section class="page-header">
@@ -177,7 +235,6 @@
       </video>
       <div class="video-info"></div>
     </div>
-
     <div class="video-card">
       <video controls poster="thumbnails/puppy2.jpg">
         <source src="v2.mp4" type="video/mp4" />
@@ -185,7 +242,6 @@
       </video>
       <div class="video-info"></div>
     </div>
-
     <div class="video-card">
       <video controls poster="thumbnails/puppy3.jpg">
         <source src="v3.mp4" type="video/mp4" />
@@ -193,7 +249,6 @@
       </video>
       <div class="video-info"></div>
     </div>
-
     <div class="video-card">
       <video controls poster="thumbnails/puppy4.jpg">
         <source src="v4.mp4" type="video/mp4" />
@@ -201,137 +256,13 @@
       </video>
       <div class="video-info"></div>
     </div>
-     <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v5.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v6.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v7.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v8.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v9.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v10.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v11.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v12.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v13.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v14.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v15.mp41" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v16.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v17.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v18.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v19.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v20.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v21.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
- <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v22.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
+    <!-- More video cards... you can keep adding as needed -->
   </section>
 
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
+    // Dark mode toggle
+    const darkToggle = document.getElementById('darkModeToggle');
+    darkToggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const isDark = document.body.classList.contains('dark-mode');
       localStorage.setItem('darkMode', isDark);
@@ -342,7 +273,25 @@
         document.body.classList.add('dark-mode');
       }
     });
+
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('mobile-menu');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('open')) {
+          navLinks.classList.remove('open');
+        }
+      });
+    });
   </script>
+  <script src="fm.js"></script>
 
   <footer>
     <p>&copy; 2025 GRYWOODACRESSTABLE. All rights reserved.</p>

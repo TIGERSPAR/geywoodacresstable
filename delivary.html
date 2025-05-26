@@ -4,13 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Delivery - GRYWOODACRESSTABLE</title>
+  <meta name="description" content="Learn about horse delivery services from GRYWOODACRESSTABLE. Safe, flexible, and professional transport for your new companion." />
+  <meta name="keywords" content="horse delivery, transport, stable, GRYWOODACRESSTABLE, shipping" />
   <link rel="stylesheet" href="style.css" />
   <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0; 
+      margin: 0; padding: 0;
     }
     .navbar {
       background: #fff;
@@ -147,21 +149,24 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html" class="active">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivary.html" class="active">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
@@ -169,7 +174,7 @@
     <p class="subtitle">Bringing your new horse right to your doorstep with care and love.</p>
 
     <section class="delivery-info">
-      <p>At GRYWOODACRESSTABLE, we understand how exciting it is to welcome a new furry friend into your home. To make this experience as smooth and joyful as possible, we offer safe and reliable delivery services across london.</p>
+      <p>At GRYWOODACRESSTABLE, we understand how exciting it is to welcome a new companion into your life. To make this experience as smooth and joyful as possible, we offer safe and reliable delivery services across London and beyond.</p>
 
       <ul class="delivery-list">
         <li><strong>Safe Transportation:</strong> Our horses travel in comfortable, climate-controlled vehicles with professional handlers.</li>
@@ -198,6 +203,10 @@
         document.body.classList.add('dark-mode');
       }
     });
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
   </script>
+  <script src="fm.js"></script>
 </body>
 </html>

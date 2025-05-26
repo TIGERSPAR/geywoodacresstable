@@ -169,21 +169,24 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Videos</a></li>
-        <li><a href="price.html" class="active">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html" class="active">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivery.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
@@ -193,40 +196,34 @@
     <table class="price-table" aria-label="horse pricing table">
       <thead>
         <tr>
-          <th>Breed</th>
-          <th>Starting Price</th>
+          <th scope="col">Breed</th>
+          <th scope="col">Starting Price</th>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td>Gypsy cob</td>
-          <td>2000£</td>
-         
+          <td>£2000</td>
         </tr>
         <tr>
           <td>Irish sport horse</td>
-          <td>2500£</td>
-         
+          <td>£2500</td>
         </tr>
         <tr>
           <td>Highland pony</td>
-          <td>2500£</td>
-          
+          <td>£2500</td>
         </tr>
         <tr>
           <td>Warm blood</td>
-          <td>3500£</td>
-          
+          <td>£3500</td>
         </tr>
         <tr>
           <td>Welsh pony and cob</td>
-          <td>1500£</td>
-          
+          <td>£1500</td>
         </tr>
         <tr>
           <td>Thoroughbred</td>
-          <td>800£</td>
-         
+          <td>£800</td>
         </tr>
       </tbody>
     </table>
@@ -239,14 +236,17 @@
   <script>
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+      const isDark = document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', isDark);
+      toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
     });
     window.addEventListener('DOMContentLoaded', () => {
       if(localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
+        toggle.textContent = '☀️ Light Mode';
       }
     });
   </script>
+  <script src="fm.js"></script>
 </body>
 </html>

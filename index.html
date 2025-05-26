@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Geywood Acres Stable - Find your perfect horse companion." />
+  <meta name="keywords" content="horses, stable, adoption, breeds, pony, horse care, Geywood Acres" />
+  <meta property="og:title" content="Geywood Acres Stable" />
+  <meta property="og:description" content="Your happy place to find the perfect horse companion." />
+  <meta property="og:type" content="website" />
   <title>Home - GRYWOODACRESSTABLE</title>
   <link rel="stylesheet" href="style.css" />
   <style>
@@ -73,7 +78,7 @@
     }
 
     .hero {
-      background: url('n12.jpg') no-repeat center center/cover;
+      background: url('n6.jpg') no-repeat center center/cover;
       height: 70vh;
       display: flex;
       flex-direction: column;
@@ -289,69 +294,32 @@
   background: #ff8a7a;
   box-shadow: 0 8px 20px rgba(255, 140, 122, 0.8);
 }
-.image-gallery {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 20px 20px;
-      background-color: #f9f9f9;
-    }
-    .image-wrapper {
-      position: relative;
-      width: 300px;
-      height: 350px;
-      cursor: pointer;
-    }
-    .image-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 8px;
-      transition: transform 0.3s ease;
-    }
-    .image-wrapper img:hover {
-      transform: scale(1.05);
-    }
-     .enlarged-image-container {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-    }
-    .enlarged-image-container img {
-      max-width: 90%;
-      max-height: 80%;
-      border-radius: 8px;
-    }
-    .enlarged-image-container.show {
-      display: flex;
-    }
+
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-  <nav>
-  <ul>
-     <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html" class="active">Delivery</a></ li>
-  </ul>
-</nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
-  </header>
-
+  <div class="content-overlay">
+    <header class="navbar">
+      <div class="container">
+        <div class="logo">GRYWOODACRESSTABLE</div>
+        <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+        <nav>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="aboutus.html">About Us</a></li>
+            <li><a href="breeds.html">Breeds</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="video.html">Videos</a></li>
+            <li><a href="price.html">Pricing</a></li>
+            <li><a href="adoption.html">Adoption</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="delivary.html">Delivery</a></li>
+          </ul>
+        </nav>
+        <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+      </div>
+    </header>
+  </div>
 
   <section class="hero">
     <h1>Welcome to our stable</h1>
@@ -363,123 +331,87 @@
     <h2>Featured Breeds</h2>
     <div class="breed-cards">
       <div class="breed-card">
-        <img src="br2.jpeg" alt="Gypsy Cob" />
+        <img src="br2.jpeg" alt="Gypsy Cob" loading="lazy" />
         <div class="breed-card-content">
           <h3>Gypsy Cob</h3>
           <p>Heavy, feathered, and kind-tempered—great family horses, often used for driving and happy hacking.</p>
-          <a href="breeds.html#golden-retriever">Learn More</a>
+          <a href="breeds.html">Learn More</a>
         </div>
       </div>
       <div class="breed-card">
-        <img src="br4.jpeg" alt="Irish Sport Horse" />
+        <img src="br4.jpeg" alt="Irish Sport Horse" loading="lazy" />
         <div class="breed-card-content">
           <h3>Irish Sport Horse</h3>
           <p>Cross of Irish Draught and Thoroughbred—bold, athletic, and popular for eventing and all-round riding.</p>
-          <a href="breeds.html#french-bulldog">Learn More</a>
+          <a href="breeds.html">Learn More</a>
         </div>
       </div>
       <div class="breed-card">
-        <img src="br6.jpeg" alt="Highland Pony" />
+        <img src="br6.jpeg" alt="Highland Pony" loading="lazy" />
         <div class="breed-card-content">
           <h3>Highland Pony</h3>
           <p>Hardy native Scottish pony, known for strength, calm nature, and surefootedness—great for trekking and family use.</p>
-          <a href="breeds.html#siberian-husky">Learn More</a>
+          <a href="breeds.html">Learn More</a>
         </div>
       </div>
-     
     </div>
   </section>
+
   <section class="image-gallery" data-aos="fade-up">
-  <div class="image-wrapper"><img src="b1.jpg" alt="Horse 1"></div>
-  <div class="image-wrapper"><img src="b2.jpg" alt="Horse 2"></div>
-  <div class="image-wrapper"><img src="b3.jpg" alt="Horse 3"></div>
-  <div class="image-wrapper"><img src="b4.jpg" alt="Horse 4"></div>
-  <div class="image-wrapper"><img src="b5.jpg" alt="Horse 5"></div>
-  <div class="image-wrapper"><img src="b6.jpg" alt="Horse 6"></div>
-</section>
-<!-- Enlarge Modal -->
-<div id="enlargedModal" class="enlarged-image-container">
-  <img id="enlargedImage" src="" alt="Enlarged Horse">
-</div>
+    <div class="image-wrapper"><img src="b1.jpg" alt="Horse 1 standing in field" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b2.jpg" alt="Closeup of brown horse" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b3.jpg" alt="Horse grazing on grass" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b4.jpg" alt="Horse running" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b5.jpg" alt="Horse behind fence" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b6.jpg" alt="Horse with white blaze" loading="lazy"></div>
+  </section>
 
-  <!-- Add this just before </body> -->
-
-<div id="newsletterPopup" class="newsletter-popup" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 10000;">
-  <div class="popup-content" style="background: #ff6f61; padding: 25px 30px; border-radius: 12px; color: white; max-width: 360px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.3); position: relative; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-    <h2 style="margin-top:0; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Subscribe to Our horse Newsletter!</h2>
-    <p style="margin-bottom: 20px; font-size: 1rem;">Get the latest updates, tips, and special offers.</p>
-    <form action="https://formspree.io/f/manovkeb" method="POST" style="display: flex; gap: 10px;">
-      <input type="email" name="email" placeholder="Your email address" required style="flex: 1; padding: 12px; border-radius: 6px; border: none; font-size: 1rem;" />
-      <button type="submit" style="background: white; color: #ff6f61; border: none; border-radius: 6px; padding: 12px 18px; font-weight: 700; cursor: pointer; transition: background 0.3s;">Subscribe</button>
-    </form>
-    <button id="closePopup" aria-label="Close newsletter popup" style="position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 24px; color: white; cursor: pointer;">✖</button>
+  <div id="enlargedModal" class="enlarged-image-container">
+    <img id="enlargedImage" src="" alt="Enlarged Horse">
   </div>
-</div>
 
-<script>
-  AOS.init();
-  window.addEventListener('load', () => {
-    setTimeout(() => {
-      document.getElementById('newsletterPopup').style.display = 'flex';
-    }, 7000);
+  <div id="newsletterPopup" class="newsletter-popup" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 10000;">
+    <div class="popup-content" style="background: #ff6f61; padding: 25px 30px; border-radius: 12px; color: white; max-width: 360px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.3); position: relative;">
+      <h2 style="margin-top:0; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Subscribe to Our Horse Newsletter!</h2>
+      <p style="margin-bottom: 20px; font-size: 1rem;">Get the latest updates, tips, and special offers.</p>
+      <form action="https://formspree.io/f/manovkeb" method="POST" style="display: flex; gap: 10px;">
+        <input type="email" name="email" placeholder="Your email address" required style="flex: 1; padding: 12px; border-radius: 6px; border: none; font-size: 1rem;" />
+        <button type="submit" style="background: white; color: #ff6f61; border: none; border-radius: 6px; padding: 12px 18px; font-weight: 700; cursor: pointer;">Subscribe</button>
+      </form>
+      <button id="closePopup" aria-label="Close newsletter popup" style="position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 24px; color: white; cursor: pointer;">✖</button>
+    </div>
+  </div>
 
-    document.getElementById('closePopup').addEventListener('click', () => {
-      document.getElementById('newsletterPopup').style.display = 'none';
-    });
-  });
-  document.getElementById('menuToggle').addEventListener('click', () => {
-  document.querySelector('.navbar nav').classList.toggle('active');
-});
-
-  // Image Enlarge
-  const galleryImages = document.querySelectorAll('.image-wrapper img');
-  const enlargedModal = document.getElementById('enlargedModal');
-  const enlargedImage = document.getElementById('enlargedImage');
-
-  galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-      enlargedImage.src = img.src;
-      enlargedModal.classList.add('show');
-    });
-  });
-
-  enlargedModal.addEventListener('click', () => {
-    enlargedModal.classList.remove('show');
-  });
-
-</script>
-
-
-  <footer>
-    <footer style="background:#055265; color:#a3ffe7; padding: 40px 20px; font-family: 'Segoe UI', sans-serif;">
-      <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
-    
-        <!-- About Section -->
-        <div style="flex: 1 1 250px; min-width: 220px;">
-          <h3 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">GRYWOODACRESSTABLE</h3>
-          <p style="line-height: 1.5;">Your trusted source for adorable horses, expert care tips, and loving homes. Join our community of horse lovers today!</p>
-        </div>
-    
-        <!-- Contact Info -->
-        <div style="flex: 1 1 220px; min-width: 220px;">
-          <h4 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">Contact Us</h4>
-          <p>Email: <a href="geywoodacresstableinfo@gmail.com" style="color:#a3ffe7; text-decoration:none;">geywoodacresstableinfo@gmail.com</a></p>
-          <p>Phone: <a href="tel:+447459919309" style="color:#a3ffe7; text-decoration:none;">+447459919309</a></p>
-          <p>Location: Geywood Acres Stable,pinner HA5,london</p>
-        </div>
-    
-       
-    
+  <footer style="background:#055265; color:#a3ffe7; padding: 40px 20px; font-family: 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+      <div style="flex: 1 1 250px; min-width: 220px;">
+        <h3 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">GRYWOODACRESSTABLE</h3>
+        <p style="line-height: 1.5;">Your trusted source for adorable horses, expert care tips, and loving homes. Join our community of horse lovers today!</p>
       </div>
-    
-      <hr style="margin: 30px 0; border-color: #4dc499; opacity: 0.3;" />
-    
-      <div style="text-align: center; font-size: 0.9rem; color: #a3ffe7;">
-        &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+      <div style="flex: 1 1 220px; min-width: 220px;">
+        <h4 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">Contact Us</h4>
+        <p>Email: <a href="mailto:geywoodacresstableinfo@gmail.com" style="color:#a3ffe7; text-decoration:none;">geywoodacresstableinfo@gmail.com</a></p>
+        <p>Phone: <a href="tel:+447459919309" style="color:#a3ffe7; text-decoration:none;">+447459919309</a></p>
+        <p>Location: Geywood Acres Stable, Pinner HA5, London</p>
       </div>
+    </div>
+    <hr style="margin: 30px 0; border-color: #4dc499; opacity: 0.3;" />
+    <div style="text-align: center; font-size: 0.9rem; color: #a3ffe7;">&copy; 2025 GRYWOODACRESSTABLE. All rights reserved.</div>
   </footer>
 
   <script>
+    AOS.init();
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('newsletterPopup').style.display = 'flex';
+      }, 7000);
+
+      document.getElementById('closePopup').addEventListener('click', () => {
+        document.getElementById('newsletterPopup').style.display = 'none';
+      });
+    });
+
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
@@ -491,23 +423,30 @@
         document.body.classList.add('dark-mode');
       }
     });
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    window.scrollTo({
-      top: target.offsetTop - 80, // Adjust offset for fixed header
-      behavior: 'smooth'
-    });
-  });
-});
 
-  </script>
-  <!-- Content Here (same as previous but simplified for mobile) -->
-  <script>
-    document.getElementById('menuToggle').addEventListener('click', () => {
-      document.querySelector('.navbar nav ul').classList.toggle('active');
+    const galleryImages = document.querySelectorAll('.image-wrapper img');
+    const enlargedModal = document.getElementById('enlargedModal');
+    const enlargedImage = document.getElementById('enlargedImage');
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        enlargedImage.src = img.src;
+        enlargedModal.classList.add('show');
+      });
+    });
+    enlargedModal.addEventListener('click', () => {
+      enlargedModal.classList.remove('show');
+    });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
     });
   </script>
+
+  <script src="fm.js"></script>
 </body>
-</html>
+</html> 

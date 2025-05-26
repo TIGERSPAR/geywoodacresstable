@@ -1,204 +1,213 @@
-
-/* Reset and base styles */
+/* Base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #fff;
+  background-color: #fff;
   color: #333;
-  transition: background 0.3s, color 0.3s;
+  line-height: 1.6;
 }
- 
-/* Navbar */
-.navbar {
-  background-color: #055265;
-  padding: 70px 30px;
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  /* Added flex for navbar container */
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 15px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 10000;
+}
+
+.logo {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  color: #ff6f61;
+  user-select: none;
+}
+
+/* Nav styles */
+nav {
   position: relative;
-  z-index: 10;
 }
 
-.navbar .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  color: rgb(77, 196, 153);
-}
-
-.navbar ul {
-  list-style: none;
+.nav-links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
-.navbar ul li a {
-  color: white;
-  text-decoration: none;
+.nav-links a {
+  color: #333;
   font-weight: 500;
-  transition: color 0.3s;
+  text-decoration: none;
+  padding: 8px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-  color: #a3ffe7;
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #ff6f61;
+  color: #fff;
 }
 
-/* Hero Section */
+/* Mobile menu icon (hamburger) */
+#mobile-menu {
+  display: none; /* hidden on desktop */
+  cursor: pointer;
+  font-size: 1.8rem;
+  color: #ff6f61;
+}
+
+/* Dark mode toggle */
+.dark-toggle {
+  background: #ff6f61;
+  border: none;
+  color: white;
+  padding: 8px 14px;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+.dark-toggle:hover {
+  background: #e6554f;
+}
+
+/* Hero section */
 .hero {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('spark.jpeg') center/cover no-repeat;
+  background-color: #f9f9f9;
+  padding: 80px 20px;
   text-align: center;
-  padding: 120px 20px;
-  color: #f0f8ff;
 }
 
 .hero h1 {
   font-size: 3rem;
-  margin-bottom: 20px;
+  color: #ff6f61;
+  margin-bottom: 15px;
 }
 
-.hero .btn {
-  padding: 10px 20px;
-  background: #ff6f61;
-  color: white;
-  border-radius: 8px;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background 0.3s;
+.hero p {
+  font-size: 1.3rem;
+  color: #555;
 }
 
-.hero .btn:hover {
-  background: #e0554b;
-}
-
-/* Features Section */
-.features {
+/* Breed Cards */
+.breed-cards {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 0;
   gap: 20px;
-  justify-content: center;
-  padding: 60px 20px;
-  background: #f4f9fc;
 }
 
-.feature {
-  flex: 1 1 250px;
-  max-width: 300px;
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: transform 0.3s;
-}
-
-.feature:hover {
-  transform: translateY(-5px);
-}
-
-/* Footer */
-footer {
-  background: #055265;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 0.95rem;
-}
-
-/* Newsletter Popup */
-.newsletter-popup {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #576281;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  z-index: 999;
-  color: white;
-}
-
-.popup-content h2 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.popup-content input {
-  padding: 10px;
-  width: 70%;
-  margin-right: 5px;
-  border: none;
-  border-radius: 6px;
-}
-
-.popup-content button {
-  padding: 10px;
-  background: #ff6f61;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.close-popup {
-  position: absolute;
-  top: 5px;
-  right: 10px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Swiper Section */
-.swiper {
-  width: 100%;
-  max-width: 800px;
-  margin: 40px auto;
-}
-
-.swiper-slide img {
-  width: 100%;
+.breed-card {
+  background-color: #fff;
   border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: box-shadow 0.3s ease;
+  user-select: none;
 }
 
-/* Dark Mode */
-.dark-mode {
-  background: #1e1e1e;
-  color: #eee;
+.breed-card:hover {
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
 
-.dark-mode .navbar,
-.dark-mode .features,
-.dark-mode footer,
-.dark-mode .newsletter-popup {
-  background-color: #2a2a2a;
+.breed-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
-.dark-mode .navbar ul li a {
-  color: #ccc;
+.breed-card h3 {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  color: #ff6f61;
+  padding: 15px 20px 10px;
 }
 
-.dark-mode .feature {
-  background: #333;
-  color: #eee;
+.breed-card p {
+  font-size: 1rem;
+  color: #666;
+  padding: 0 20px 20px;
 }
 
-.dark-toggle {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  padding: 8px 12px;
-  background: #2ea9b6;
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  z-index: 999;
+/* Media queries */
+
+/* Mobile menu toggle and nav for screens <= 900px */
+@media (max-width: 900px) {
+  /* Hide nav-links by default on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px; /* height of navbar */
+    right: 30px;
+    width: 180px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 1000;
+  }
+
+  /* Show nav-links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Show hamburger menu icon */
+  #mobile-menu {
+    display: block;
+  }
 }
 
-.dark-mode .dark-toggle {
-  background: #444;
-  color: #fff;
+/* Small devices: tablets, phones */
+@media (max-width: 600px) {
+  /* Hero adjustments */
+  .hero {
+    padding: 40px 20px;
+  }
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Breed card full width */
+  .breed-card {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  /* Center breed cards container */
+  .breed-cards {
+    justify-content: center;
+  }
 }

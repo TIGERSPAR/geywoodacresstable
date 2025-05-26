@@ -4,8 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Adoption - GRYWOODACRESSTABLE</title>
+  <meta name="description" content="Adopt a loving horse from GRYWOODACRESSTABLE. Find Gypsy Cobs, Highland Ponies, Irish Sport Horses, and more." />
+  <meta name="keywords" content="adoption, horses, GRYWOODACRESSTABLE, horse adoption, apply for horse" />
   <link rel="stylesheet" href="style.css" />
-  <style> 
+  <style>
     body {
       background: #f9fbfd;
       color: #2c3e50;
@@ -220,70 +222,74 @@
     body.dark-mode form.adoption-form textarea:focus {
       border-color: #ff6f61;
     }
+
   </style>
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html">Videos</a></li>
-        <li><a href="price.html" >Pricing</a></li>
-        <li><a href="adoption.html" class="active">Adoption</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html" class="active">Adoption</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="delivary.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
     <h1>Adopt Your New Best Friend</h1>
     <p class="intro-text">Find your perfect horse today! Below are some of our adorable horses currently waiting for loving homes.</p>
-    
+
     <div class="puppy-list">
       <div class="puppy-card">
-        <img src="br2.jpeg" alt="Gypsy cob" />
+        <img src="br2.jpeg" alt="Gypsy Cob horse" loading="lazy" />
         <div class="puppy-info">
-          <h3>Gypsy cob</h3>
-          <p></p>
+          <h3>Gypsy Cob</h3>
+          <p>Calm and friendly, ideal for families and beginner riders.</p>
         </div>
       </div>
       <div class="puppy-card">
-        <img src="br4.jpeg" alt="Irish sport horse" />
+        <img src="br4.jpeg" alt="Irish Sport Horse" loading="lazy" />
         <div class="puppy-info">
-          <h3>Irish sport horse</h3>
-          <p></p>
+          <h3>Irish Sport Horse</h3>
+          <p>Elegant and athletic, perfect for riding and jumping sports.</p>
         </div>
       </div>
       <div class="puppy-card">
-        <img src="br6.jpeg" alt="Highland pony" />
+        <img src="br6.jpeg" alt="Highland Pony" loading="lazy" />
         <div class="puppy-info">
-          <h3>Highland pony</h3>
-          <p></p>
+          <h3>Highland Pony</h3>
+          <p>Hardy and dependable, great for trails and family adventures.</p>
         </div>
       </div>
     </div>
 
-    <form class="adoption-form" action="https://formspree.io/f/xdkgbjdz" method="post">
+    <form class="adoption-form" action="https://formspree.io/f/xdkgbjdz" method="POST">
       <h2>Adoption Application</h2>
       <input type="text" name="fullname" placeholder="Full Name" required />
       <input type="email" name="email" placeholder="Email Address" required />
       <input type="tel" name="phone" placeholder="Phone Number" required />
-      <select name="puppy" required>
-        <option value="" disabled selected>Select horse to Adopt</option>
-        <option value="goldie">Gypsy cob</option>
-        <option value="bella">Irish sport horse</option>
-        <option value="rocky">Highland pony</option>
-         <option value="rocky">Warm blood</option>
-         <option value="rocky">Welsh pony and cob</option>
-         <option value="rocky">Thoroughbred</option>
+      <select name="horse" required>
+        <option value="" disabled selected>Select horse to adopt</option>
+        <option value="gypsy-cob">Gypsy Cob</option>
+        <option value="irish-sport">Irish Sport Horse</option>
+        <option value="highland-pony">Highland Pony</option>
+        <option value="warmblood">Warmblood</option>
+        <option value="welsh-pony">Welsh Pony and Cob</option>
+        <option value="thoroughbred">Thoroughbred</option>
       </select>
-      <textarea name="message" rows="5" placeholder="Tell us a bit about yourself and why you'd make a great horse parent!" required></textarea>
+      <textarea name="message" rows="5" placeholder="Tell us about yourself and why you'd make a great horse parent!" required></textarea>
       <button type="submit">Submit Application</button>
     </form>
   </main>
@@ -293,11 +299,22 @@
   </footer>
 
   <script>
-     const toggle = document.getElementById('darkModeToggle');
+    const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
-  </script> 
-  </body>
-  </html>
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+  <script src="fm.js"></script>
+</body>
+</html>

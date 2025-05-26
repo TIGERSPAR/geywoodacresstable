@@ -4,10 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact Us - GRYWOODACRESSTABLE</title>
+  <meta name="description" content="Contact GRYWOODACRESSTABLE for questions, adoption help, or general support. We're happy to assist!" />
+  <meta name="keywords" content="contact, support, get in touch, horse stable, GRYWOODACRESSTABLE" />
   <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      background: #f9fbfd; 
+  body {
+      background: #f9fbfd;
       color: #2c3e50;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0; padding: 0;
@@ -209,21 +211,24 @@
 </head>
 <body>
   <header class="navbar">
-    <div class="logo">GRYWOODACRESSTABLE</div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="aboutus.html">About Us</a></li>
-        <li><a href="breeds.html">Breeds</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="video.html" >Videos</a></li>
-        <li><a href="price.html">Pricing</a></li>
-        <li><a href="adoption.html">Adoption</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-        <li><a href="delivary.html">Delivery</a></li>
-      </ul>
-    </nav>
-    <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    <div class="container">
+      <div class="logo">GRYWOODACRESSTABLE</div>
+      <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+      <nav>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="breeds.html">Breeds</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="video.html">Videos</a></li>
+          <li><a href="price.html">Pricing</a></li>
+          <li><a href="adoption.html">Adoption</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="delivary.html">Delivery</a></li>
+        </ul>
+      </nav>
+      <button id="darkModeToggle" class="dark-toggle">🌙 Dark Mode</button>
+    </div>
   </header>
 
   <main>
@@ -234,11 +239,11 @@
       <div class="contact-info">
         <h2>Get in Touch</h2>
         <p><strong>Email:</strong> geywoodacresstableinfo@gmail.com</p>
-        <p><strong>Phone:</strong> +447459919309</p>
-        <p><strong>Address:</strong> Geywood Acres Stable,pinner HA5,london</p>
+        <p><strong>Phone:</strong> +44 7459 919309</p>
+        <p><strong>Address:</strong> Geywood Acres Stable, Pinner HA5, London</p>
       </div>
 
-      <form class="contact-form" action="https://formspree.io/f/xjkwlzyw" method="post">
+      <form class="contact-form" action="https://formspree.io/f/xjkwlzyw" method="POST">
         <h3>Send Us a Message</h3>
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
@@ -256,16 +261,19 @@
     const toggle = document.getElementById('darkModeToggle');
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
-
-      // Save preference
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
 
     window.addEventListener('DOMContentLoaded', () => {
-      if(localStorage.getItem('darkMode') === 'true') {
+      if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
     });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
   </script>
+  <script src="fm.js"></script>
 </body>
 </html>
