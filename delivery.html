@@ -121,6 +121,84 @@
         max-width: 100%;
       }
     }
+     main {
+      max-width: 900px;
+      margin: 50px auto 70px;
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: #ff6f61;
+      text-align: center;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+    p.subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      color: #3a5160;
+    }
+
+    .delivery-info {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      color: #2c3e50;
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+
+    ul.delivery-list {
+      margin-top: 20px;
+      padding-left: 20px;
+      color: #ff6f61;
+    }
+
+    ul.delivery-list li {
+      margin-bottom: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #999;
+      background: #fafafa;
+      margin-top: 60px;
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+    body.dark-mode .navbar {
+      background: #1f1f1f;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+    body.dark-mode .navbar nav ul li a {
+      color: #ccc;
+    }
+    body.dark-mode .navbar nav ul li a.active,
+    body.dark-mode .navbar nav ul li a:hover {
+      background: #ff6f61;
+      color: #fff;
+    }
+    body.dark-mode .dark-toggle {
+      color: #ff6f61;
+    }
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+    body.dark-mode .delivery-info {
+      background: #222;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
+      color: #ddd;
+    }
   </style>
 </head>
 <body>
@@ -138,32 +216,45 @@
       <a href="delivery.html">Delivery</a>
     </nav>
   </header>
+<main>
+    <h1>Our Delivery Services</h1>
+    <p class="subtitle">Bringing your new horse right to your doorstep with care and love.</p>
 
-  <section class="section">
-    <h2>Horse Delivery Services</h2>
-    <p>At Greywoodacre Stable, we offer safe and professional delivery services to transport your new horse to your location, ensuring comfort and care every step of the way.</p>
-    
-    <div class="delivery-options">
-      <div class="option-card">
-        <h3>Local Delivery</h3>
-        <p>Within 100 miles radius. Delivered within 2-3 days, with regular updates.</p>
-        <div class="price">$300 flat rate</div>
-      </div>
-      <div class="option-card">
-        <h3>Regional Delivery</h3>
-        <p>Up to 300 miles. Includes vet check on delivery and travel insurance.</p>
-        <div class="price">$600 flat rate</div>
-      </div>
-      <div class="option-card">
-        <h3>Long-Distance Delivery</h3>
-        <p>Nationwide transport by experienced handlers with climate-controlled trailers.</p>
-        <div class="price">Contact us for a quote</div>
-      </div>
-    </div>
-  </section>
+    <section class="delivery-info">
+      <p>At GRYWOODACRESSTABLE, we understand how exciting it is to welcome a new companion into your life. To make this experience as smooth and joyful as possible, we offer safe and reliable delivery services across London and beyond.</p>
+
+      <ul class="delivery-list">
+        <li><strong>Safe Transportation:</strong> Our horses travel in comfortable, climate-controlled vehicles with professional handlers.</li>
+        <li><strong>Nationwide Coverage:</strong> We deliver to all major cities and many rural areas—just ask us if you have special location needs.</li>
+        <li><strong>Scheduling Flexibility:</strong> Choose a delivery date that works best for you.</li>
+        <li><strong>Health Guarantee:</strong> Each horse is checked by a vet before delivery, with all vaccinations up to date.</li>
+        <li><strong>Tracking & Updates:</strong> Get real-time tracking and regular updates on your horse's journey.</li>
+      </ul>
+
+      <p>If you have questions or need custom arrangements, please <a href="contact.html" style="color:#ff6f61; font-weight:bold; text-decoration:none;">contact us</a>. We’re happy to assist you!</p>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Greywoodacre Stable. All rights reserved.</p>
+    &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
   </footer>
+
+  <script>
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+    window.addEventListener('DOMContentLoaded', () => {
+      if(localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
+
+  

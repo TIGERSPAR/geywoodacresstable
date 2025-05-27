@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greywoodacre Stable</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfcfb;
+      color: #333;
+    }
+    header {
+      background-color: #2f2f2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature {
+      max-width: 300px;
+      margin: 1rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .features, .image-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    footer {
+      background-color: #2f2f2f;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Greywoodacre Stable</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+      <a href="#breeds">Breeds</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Grace. Strength. Legacy.</h2>
+  </section>
+
+  <section class="section" id="about">
+    <h3>Welcome to Greywoodacre Stable</h3>
+    <p>Where tradition meets excellence. We are devoted to the care, training, and showcasing of exceptional horses.</p>
+    <div class="image-row">
+      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Horse 1">
+      <img src="https://images.unsplash.com/photo-1601233743262-3b94e2c30d43" alt="Horse 2">
+      <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Horse 3">
+    </div>
+  </section>
+
+  <section class="section">
+    <h3>Our Highlights</h3>
+    <div class="features">
+      <div class="feature">
+        <i class="fas fa-horse fa-2x"></i>
+        <h4>Premium Breeds</h4>
+        <p>We raise top-tier horses with champion bloodlines and excellent temperaments.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-leaf fa-2x"></i>
+        <h4>Natural Setting</h4>
+        <p>Our horses thrive in open, natural pastures for optimal health and development.</p>
+      </div>
+      <div class="feature">
+        <i class="fas fa-award fa-2x"></i>
+        <h4>Training Excellence</h4>
+        <p>We offer professional training that nurtures both spirit and skill.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Greywoodacre Stable. All rights reserved.</p>
+  </footer>
+</body>
+</html>
