@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Greywoodacre Stable</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style> 
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fdfcfb;
+      color: #333;
+    }
+    header {
+      background-color: #2f2f2f;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #fff;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .hero {
+      background: url('n6.jpg') center/cover no-repeat;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    .features {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .feature {
+      max-width: 300px;
+      margin: 1rem;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      background-color: #fff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    }
+    .image-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .image-row img {
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 768px) {
+      .features, .image-row {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    footer {
+      background-color: #2f2f2f;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    .dark-toggle {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: #ff6f61;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      background: #ff6f61;
+      color: white;
+    }
+
+    .hero {
+      background: url('n6.jpg') no-repeat center center/cover;
+      height: 70vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      margin-bottom: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      font-size: 1.4rem;
+      max-width: 600px;
+      margin-bottom: 30px;
+      font-weight: 600;
+    }
+
+    .hero .btn {
+      background: #ff6f61;
+      color: white;
+      padding: 15px 35px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.4);
+    }
+
+    .hero .btn:hover {
+      background: #e55a4e;
+      box-shadow: 0 10px 25px rgba(229,90,78,0.6);
+    }
+
+    .featured-breeds {
+      max-width: 1100px;
+      margin: 50px auto 80px;
+      padding: 0 20px;
+      text-align: center;
+    }
+
+    .featured-breeds h2 {
+      font-size: 2.4rem;
+      color: #ff6f61;
+      margin-bottom: 30px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .breed-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .breed-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.07);
+      width: 280px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .breed-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+
+    .breed-card img {
+      width: 100%;
+      height: 190px;
+      object-fit: cover;
+    }
+
+    .breed-card-content {
+      padding: 20px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .breed-card-content h3 {
+      margin: 0 0 12px 0;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+
+    .breed-card-content p {
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.4;
+      flex-grow: 1;
+    }
+
+    .breed-card-content a {
+      margin-top: 15px;
+      text-align: center;
+      background: #ff6f61;
+      color: white;
+      padding: 10px 20px;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+      display: inline-block;
+    }
+
+    .breed-card-content a:hover {
+      background: #e55a4e;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 0.9rem;
+      color: #999;
+      background: #fafafa;
+      margin-top: 60px;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+
+    body.dark-mode .navbar {
+      background: #1f1f1f;
+      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    }
+
+    body.dark-mode .navbar nav ul li a {
+      color: #ccc;
+    }
+
+    body.dark-mode .navbar nav ul li a.active,
+    body.dark-mode .navbar nav ul li a:hover {
+      background: #ff6f61;
+      color: #fff;
+    }
+
+    body.dark-mode .dark-toggle {
+      color: #ff6f61;
+    }
+
+    body.dark-mode .hero {
+      text-shadow: 0 2px 10px rgba(0,0,0,0.9);
+    }
+
+    body.dark-mode .featured-breeds h2 {
+      color: #ff6f61;
+    }
+
+    body.dark-mode .breed-card {
+      background: #1e1e1e;
+      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
+    }
+
+    body.dark-mode .breed-card-content h3,
+    body.dark-mode .breed-card-content p {
+      color: #ddd;
+    }
+
+    body.dark-mode .breed-card-content a {
+      background: #ff6f61;
+      color: white;
+    }
+
+    body.dark-mode .breed-card-content a:hover {
+      background: #e55a4e;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Greywoodacre Stable</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="breeds.html">Breeds</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="video.html">Videos</a>
+       <a href="price.html">Prices</a>
+       <a href="adoption.html">Adoption</a>
+      <a href="contact.html">Contact</a>
+      <a href="delivery.html">Delivery</a>
+    </nav>
+  </header>
+
+ 
+
+  
+<section class="hero">
+    <h1>Welcome to our stable</h1>
+    <p>Your happy place to find the perfect horse companion</p>
+    <a href="adoption.html" class="btn">View our horses for Adoption</a>
+  </section>
+
+  <section class="featured-breeds">
+    <h2>Featured Breeds</h2>
+    <div class="breed-cards">
+      <div class="breed-card">
+        <img src="br2.jpeg" alt="Gypsy Cob" loading="lazy" />
+        <div class="breed-card-content">
+          <h3>Gypsy Cob</h3>
+          <p>Heavy, feathered, and kind-tempered—great family horses, often used for driving and happy hacking.</p>
+          <a href="breeds.html">Learn More</a>
+        </div>
+      </div>
+      <div class="breed-card">
+        <img src="br4.jpeg" alt="Irish Sport Horse" loading="lazy" />
+        <div class="breed-card-content">
+          <h3>Irish Sport Horse</h3>
+          <p>Cross of Irish Draught and Thoroughbred—bold, athletic, and popular for eventing and all-round riding.</p>
+          <a href="breeds.html">Learn More</a>
+        </div>
+      </div>
+      <div class="breed-card">
+        <img src="br6.jpeg" alt="Highland Pony" loading="lazy" />
+        <div class="breed-card-content">
+          <h3>Highland Pony</h3>
+          <p>Hardy native Scottish pony, known for strength, calm nature, and surefootedness—great for trekking and family use.</p>
+          <a href="breeds.html">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="image-gallery" data-aos="fade-up">
+    <div class="image-wrapper"><img src="b1.jpg" alt="Horse 1 standing in field" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b2.jpg" alt="Closeup of brown horse" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b3.jpg" alt="Horse grazing on grass" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b4.jpg" alt="Horse running" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b5.jpg" alt="Horse behind fence" loading="lazy"></div>
+    <div class="image-wrapper"><img src="b6.jpg" alt="Horse with white blaze" loading="lazy"></div>
+  </section>
+
+  <div id="enlargedModal" class="enlarged-image-container">
+    <img id="enlargedImage" src="" alt="Enlarged Horse">
+  </div>
+
+  <div id="newsletterPopup" class="newsletter-popup" style="display:none; position: fixed; top:0; left:0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.6); align-items: center; justify-content: center; z-index: 10000;">
+    <div class="popup-content" style="background: #ff6f61; padding: 25px 30px; border-radius: 12px; color: white; max-width: 360px; width: 90%; box-shadow: 0 8px 20px rgba(0,0,0,0.3); position: relative;">
+      <h2 style="margin-top:0; margin-bottom: 15px; font-weight: 700; font-size: 1.5rem;">Subscribe to Our Horse Newsletter!</h2>
+      <p style="margin-bottom: 20px; font-size: 1rem;">Get the latest updates, tips, and special offers.</p>
+      <form action="https://formspree.io/f/manovkeb" method="POST" style="display: flex; gap: 10px;">
+        <input type="email" name="email" placeholder="Your email address" required style="flex: 1; padding: 12px; border-radius: 6px; border: none; font-size: 1rem;" />
+        <button type="submit" style="background: white; color: #ff6f61; border: none; border-radius: 6px; padding: 12px 18px; font-weight: 700; cursor: pointer;">Subscribe</button>
+      </form>
+      <button id="closePopup" aria-label="Close newsletter popup" style="position: absolute; top: 10px; right: 12px; background: transparent; border: none; font-size: 24px; color: white; cursor: pointer;">✖</button>
+    </div>
+  </div>
+
+  <footer style="background:#055265; color:#a3ffe7; padding: 40px 20px; font-family: 'Segoe UI', sans-serif;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between;">
+      <div style="flex: 1 1 250px; min-width: 220px;">
+        <h3 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">GRYWOODACRESSTABLE</h3>
+        <p style="line-height: 1.5;">Your trusted source for adorable horses, expert care tips, and loving homes. Join our community of horse lovers today!</p>
+      </div>
+      <div style="flex: 1 1 220px; min-width: 220px;">
+        <h4 style="color: #4dc499; margin-bottom: 15px; font-weight: 700;">Contact Us</h4>
+        <p>Email: <a href="mailto:geywoodacresstableinfo@gmail.com" style="color:#a3ffe7; text-decoration:none;">geywoodacresstableinfo@gmail.com</a></p>
+        <p>Phone: <a href="tel:+447459919309" style="color:#a3ffe7; text-decoration:none;">+447459919309</a></p>
+        <p>Location: Geywood Acres Stable, Pinner HA5, London</p>
+      </div>
+    </div>
+    <hr style="margin: 30px 0; border-color: #4dc499; opacity: 0.3;" />
+    <div style="text-align: center; font-size: 0.9rem; color: #a3ffe7;">&copy; 2025 GRYWOODACRESSTABLE. All rights reserved.</div>
+  </footer>
+
+  <script>
+    AOS.init();
+
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('newsletterPopup').style.display = 'flex';
+      }, 7000);
+
+      document.getElementById('closePopup').addEventListener('click', () => {
+        document.getElementById('newsletterPopup').style.display = 'none';
+      });
+    });
+
+    const toggle = document.getElementById('darkModeToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    });
+
+    window.addEventListener('DOMContentLoaded', () => {
+      if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+
+    const galleryImages = document.querySelectorAll('.image-wrapper img');
+    const enlargedModal = document.getElementById('enlargedModal');
+    const enlargedImage = document.getElementById('enlargedImage');
+    galleryImages.forEach(img => {
+      img.addEventListener('click', () => {
+        enlargedImage.src = img.src;
+        enlargedModal.classList.add('show');
+      });
+    });
+    enlargedModal.addEventListener('click', () => {
+      enlargedModal.classList.remove('show');
+    });
+
+    document.getElementById('mobile-menu').addEventListener('click', () => {
+      document.querySelector('.nav-links').classList.toggle('active');
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.querySelector('.nav-links').classList.remove('active');
+      });
+    });
+  </script>
+
+  <script src="fm.js"></script>
+  
+</body>
+</html>

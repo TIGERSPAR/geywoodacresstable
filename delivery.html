@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Adoption - Greywoodacre Stable</title>
+  <title>Delivery - Greywoodacre Stable</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; } 
@@ -41,68 +41,57 @@
     }
     .section {
       padding: 4rem 2rem;
+      max-width: 700px;
+      margin: auto;
       text-align: center;
     }
     .section h2 {
       font-family: 'Playfair Display', serif;
       font-size: 2.2rem;
+      margin-bottom: 1rem;
+    }
+    .section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.5;
       margin-bottom: 2rem;
     }
-    .horses-grid {
+    .delivery-options {
       display: flex;
+      justify-content: space-around;
       flex-wrap: wrap;
-      justify-content: center;
       gap: 2rem;
     }
-    .horse-card {
+    .option-card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.05);
       max-width: 300px;
-      width: 100%;
+      padding: 1.5rem;
       text-align: left;
-      overflow: hidden;
       border: 1px solid #e0e0e0;
+      flex-grow: 1;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
-    .horse-card img {
-      width: 100%;
-      height: auto;
-      border-bottom: 1px solid #ddd;
+    .option-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+      color: #2f2f2f;
     }
-    .horse-info {
-      padding: 1rem 1.5rem;
+    .option-card p {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 1rem;
       flex-grow: 1;
     }
-    .horse-info h3 {
-      font-family: 'Playfair Display', serif;
-      margin-top: 0;
-      margin-bottom: 0.5rem;
-      font-size: 1.5rem;
-    }
-    .horse-info p {
-      margin: 0 0 1rem 0;
-      font-size: 1rem;
-      line-height: 1.4;
-      color: #555;
-    }
-    .btn-contact {
-      background-color: #2f2f2f;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      cursor: pointer;
-      border-radius: 8px;
-      margin: 0 1.5rem 1.5rem 1.5rem;
-      text-align: center;
-      text-decoration: none;
-      display: block;
-      transition: background-color 0.3s ease;
-    }
-    .btn-contact:hover {
-      background-color: #444;
+    .option-card .price {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: #2f2f2f;
+      margin-bottom: 0.75rem;
     }
     footer {
       background-color: #2f2f2f;
@@ -124,9 +113,12 @@
       nav a {
         margin: 0.5rem 0;
       }
-      .horses-grid {
+      .delivery-options {
         flex-direction: column;
         align-items: center;
+      }
+      .option-card {
+        max-width: 100%;
       }
     }
   </style>
@@ -135,7 +127,7 @@
   <header>
     <h1>Greywoodacre Stable</h1>
     <nav>
-      <a href="home.html">Home</a>
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="breeds.html">Breeds</a>
       <a href="gallery.html">Gallery</a>
@@ -148,38 +140,24 @@
   </header>
 
   <section class="section">
-    <h2>Adopt a Horse</h2>
-    <p>We believe every horse deserves a loving home. Here are some of our wonderful horses currently available for adoption.</p>
-
-    <div class="horses-grid">
-      <div class="horse-card">
-        <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16" alt="Horse Bella" />
-        <div class="horse-info">
-          <h3>Bella</h3>
-          <p>Age: 5 years | Breed: Arabian</p>
-          <p>Gentle and spirited, Bella loves trail rides and has a friendly temperament.</p>
-          <a href="contact.html" class="btn-contact">Inquire About Bella</a>
-        </div>
+    <h2>Horse Delivery Services</h2>
+    <p>At Greywoodacre Stable, we offer safe and professional delivery services to transport your new horse to your location, ensuring comfort and care every step of the way.</p>
+    
+    <div class="delivery-options">
+      <div class="option-card">
+        <h3>Local Delivery</h3>
+        <p>Within 100 miles radius. Delivered within 2-3 days, with regular updates.</p>
+        <div class="price">$300 flat rate</div>
       </div>
-
-      <div class="horse-card">
-        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1" alt="Horse Max" />
-        <div class="horse-info">
-          <h3>Max</h3>
-          <p>Age: 7 years | Breed: Thoroughbred</p>
-          <p>Strong and agile, Max excels in jumping and loves a confident rider.</p>
-          <a href="contact.html" class="btn-contact">Inquire About Max</a>
-        </div>
+      <div class="option-card">
+        <h3>Regional Delivery</h3>
+        <p>Up to 300 miles. Includes vet check on delivery and travel insurance.</p>
+        <div class="price">$600 flat rate</div>
       </div>
-
-      <div class="horse-card">
-        <img src="https://images.unsplash.com/photo-1549924231-f129b911e442" alt="Horse Daisy" />
-        <div class="horse-info">
-          <h3>Daisy</h3>
-          <p>Age: 4 years | Breed: Quarter Horse</p>
-          <p>Calm and dependable, Daisy is great for beginners and family riding.</p>
-          <a href="contact.html" class="btn-contact">Inquire About Daisy</a>
-        </div>
+      <div class="option-card">
+        <h3>Long-Distance Delivery</h3>
+        <p>Nationwide transport by experienced handlers with climate-controlled trailers.</p>
+        <div class="price">Contact us for a quote</div>
       </div>
     </div>
   </section>
