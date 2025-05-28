@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Videos - Greywoodacre Stable</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videos - Geywoodacre Stable</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif; 
+      font-family: 'Inter', sans-serif;
       background-color: #fdfcfb;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
+
+    body.dark-mode {
+      background: #121212;
+      color: #eee;
+    }
+
     header {
       background-color: #2f2f2f;
       padding: 1rem 2rem;
@@ -22,108 +31,61 @@
       flex-wrap: wrap;
       color: #fff;
     }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
       margin: 0;
     }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 0.5rem;
     }
+
     nav a {
       color: #fff;
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 600;
     }
-    .video-section {
-      text-align: center;
-      padding: 4rem 2rem;
-      background-color: #f5f5f5;
-    }
-    .video-section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
-    }
-    .video-container {
-      position: relative;
-      width: 100%;
-      max-width: 900px;
-      margin: 0 auto;
-      padding-bottom: 56.25%; /* 16:9 aspect ratio */
-      height: 0;
-      overflow: hidden;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
-    footer {
-      background-color: #2f2f2f;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
-      }
-      nav a {
-        margin: 0.5rem 0;
-      }
-    }
+
     .dark-toggle {
-      background: transparent;
-      border: none;
-      font-size: 1.2rem;
+      margin-left: 1.5rem;
       cursor: pointer;
-      color: #ff6f61;
-      font-weight: 700;
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: background 0.3s ease;
+      font-size: 1.2rem;
     }
-    .dark-toggle:hover {
-      background: #ff6f61;
-      color: white;
-    }
+
     main {
       max-width: 1000px;
-      margin: 50px auto 70px;
-      padding: 0 20px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
     }
+
     h1 {
       color: #ff6f61;
       text-align: center;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
+
+    p.subtitle {
+      text-align: center;
+      font-size: 1.1rem;
+      color: #3a5160;
+      margin-bottom: 2.5rem;
+    }
+
     .video-gallery {
-      max-width: 1000px;
-      margin: 40px auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
       gap: 30px;
-      padding: 0 20px 60px;
+      padding: 0 20px;
     }
+
     .video-card {
       background: white;
       border-radius: 12px;
@@ -131,273 +93,125 @@
       overflow: hidden;
       transition: transform 0.3s;
     }
+
     .video-card:hover {
       transform: translateY(-8px);
     }
+
     .video-card video {
       width: 100%;
       height: auto;
       display: block;
     }
+
     .video-info {
       padding: 15px 20px;
       color: #055265;
       font-weight: 600;
       font-size: 1.1rem;
     }
+
     footer {
-      background: #055265;
+      background: #2f2f2f;
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px;
       font-size: 0.95rem;
     }
-    /* Dark mode styles */
-    body.dark-mode {
-      background: #1e1e1e;
-      color: #eee;
-    }
-    body.dark-mode .navbar {
-      background-color: #2a2a2a;
-      color: #4dc499;
-    }
-    body.dark-mode .nav-links li a {
-      color: #ccc;
-    }
-    body.dark-mode .nav-links li a.active,
-    body.dark-mode .nav-links li a:hover {
-      color: #a3ffe7;
-    }
-    body.dark-mode .page-header {
-      background: #2a2a2a;
-      color: #4dc499;
-    }
+
+    /* Dark Mode */
     body.dark-mode .video-card {
-      background: #333;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
-      color: #a3ffe7;
-    }
-    body.dark-mode footer {
-      background: #2a2a2a;
-      color: #a3ffe7;
+      background: #222;
+      box-shadow: 0 4px 12px rgba(255,111,97,0.2);
     }
 
+    body.dark-mode .video-info {
+      color: #ffb3a7;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Greywoodacre Stable</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="breeds.html">Breeds</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="video.html">Videos</a>
-       <a href="price.html">Prices</a>
-       <a href="adoption.html">Adoption</a>
-      <a href="contact.html">Contact</a>
-      <a href="delivery.html">Delivery</a>
-    </nav>
+    <h1>Geywoodacre Stable</h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="breeds.html">Breeds</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="video.html">Videos</a>
+        <a href="price.html">Prices</a>
+        <a href="adoption.html">Adoption</a>
+        <a href="contact.html">Contact</a>
+        <a href="delivery.html">Delivery</a>
+      </nav>
+      <span class="dark-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></span>
+    </div>
   </header>
- <section class="page-header">
-    <h1>Watch Our horses</h1>
-    <p>Enjoy adorable videos of our furry friends playing, learning, and growing.</p>
-  </section>
 
-  <section class="video-gallery">
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy1.jpg">
-        <source src="v1.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy2.jpg">
-        <source src="v2.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy3.jpg">
-        <source src="v3.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v4.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v5.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v6.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v7.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v8.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v9.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v10.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v11.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v12.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v13.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v14.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v15.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v16.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v17.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v18.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v19.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v20.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v21.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    <div class="video-card">
-      <video controls poster="thumbnails/puppy4.jpg">
-        <source src="v22.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-      <div class="video-info"></div>
-    </div>
-    
-    <!-- More video cards... you can keep adding as needed -->
-  </section>
+  <main>
+    <h1>Watch Our Horses</h1>
+    <p class="subtitle">Enjoy adorable videos of our horses playing, training, and bonding.</p>
+
+    <section class="video-gallery">
+      <!-- Sample videos (replace poster paths and video files) -->
+      <div class="video-card">
+        <video controls poster="thumbnails/puppy1.jpg">
+          <source src="v1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-info">Playtime in the meadow</div>
+      </div>
+
+      <div class="video-card">
+        <video controls poster="thumbnails/puppy2.jpg">
+          <source src="v2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-info">Training session highlights</div>
+      </div>
+
+      <!-- Add more video-card blocks as needed -->
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.
+  </footer>
 
   <script>
-    // Dark mode toggle
-    const darkToggle = document.getElementById('darkModeToggle');
-    darkToggle.addEventListener('click', () => {
+    function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
-      const isDark = document.body.classList.contains('dark-mode');
-      localStorage.setItem('darkMode', isDark);
-    });
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
     });
-
-    // Mobile menu toggle
-    const menuToggle = document.getElementById('mobile-menu');
-    const navLinks = document.getElementById('nav-links');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-    });
-
-    // Close mobile menu on link click
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        if (navLinks.classList.contains('open')) {
-          navLinks.classList.remove('open');
-        }
-      });
-    });
   </script>
-
-  <footer>
-    <p>&copy; 2025 GRYWOODACRESSTABLE. All rights reserved.</p>
-  </footer>
 </body>
 </html>

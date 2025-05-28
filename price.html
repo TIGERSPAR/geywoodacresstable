@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prices - Greywoodacre Stable</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prices - Geywoodacre Stable</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif; 
-      background-color: #fdfcfb;
+      font-family: 'Inter', sans-serif;
+      background: #fdfcfb;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
+
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+
     header {
       background-color: #2f2f2f;
       padding: 1rem 2rem;
@@ -22,109 +31,67 @@
       flex-wrap: wrap;
       color: #fff;
     }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
       margin: 0;
     }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 0.5rem;
     }
+
     nav a {
       color: #fff;
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .section {
-      padding: 4rem 2rem;
-      text-align: center;
+
+    nav a:hover {
+      color: #ff6f61;
     }
-    .section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
-      margin-bottom: 2rem;
+
+    .dark-toggle {
+      margin-left: 1.5rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
     }
-    .pricing-table {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      margin-top: 2rem;
+
+    .dark-toggle:hover {
+      color: #ff6f61;
     }
-    .price-card {
-      background-color: #fff;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      padding: 2rem;
-      max-width: 300px;
-      width: 100%;
-      text-align: left;
-      border: 1px solid #e0e0e0;
-    }
-    .price-card h3 {
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-      font-family: 'Playfair Display', serif;
-    }
-    .price-card p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    .price {
-      font-size: 1.8rem;
-      font-weight: bold;
-      margin: 1rem 0;
-      color: #2f2f2f;
-    }
-    footer {
-      background-color: #2f2f2f;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
-      }
-      nav a {
-        margin: 0.5rem 0;
-      }
-    }
+
     main {
       max-width: 900px;
-      margin: 50px auto 70px;
-      padding: 0 20px;
+      margin: 3rem auto 4rem;
+      padding: 0 2rem;
     }
 
     h1 {
       color: #ff6f61;
       text-align: center;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    p.subtitle {
+
+    .subtitle {
       text-align: center;
       font-size: 1.1rem;
-      margin-bottom: 40px;
       color: #3a5160;
+      margin-bottom: 2.5rem;
     }
 
     .price-table {
       width: 100%;
       border-collapse: collapse;
-      margin: 0 auto;
       background: white;
       border-radius: 12px;
       overflow: hidden;
@@ -157,72 +124,80 @@
     }
 
     footer {
+      background-color: #2f2f2f;
+      color: #fff;
       text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
-      background: #fafafa;
-      margin-top: 60px;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
     }
 
     /* Dark Mode */
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
-      color: #fff;
-    }
-    body.dark-mode .dark-toggle {
-      color: #ff6f61;
-    }
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #bbb;
-    }
     body.dark-mode .price-table {
       background: #222;
       box-shadow: 0 8px 20px rgba(255,111,97,0.2);
-      color: #ddd;
     }
+
     body.dark-mode .price-table th {
       background-color: #ff6f61;
       color: #fff;
     }
+
+    body.dark-mode .price-table td {
+      color: #ddd;
+      border-color: #444;
+    }
+
     body.dark-mode .price-table tbody tr:hover {
-      background-color: #ff8a7a44;
+      background-color: #ff8a7a33;
+    }
+
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Greywoodacre Stable</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="breeds.html">Breeds</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="video.html">Videos</a>
-      <a href="price.html">Prices</a>
-      <a href="adoption.html">Adoption</a>
-      <a href="contact.html">Contact</a>
-      <a href="delivery.html">Delivery</a>
-    </nav>
+    <h1>Geywoodacre Stable</h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="breeds.html">Breeds</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="video.html">Videos</a>
+        <a href="price.html">Prices</a>
+        <a href="adoption.html">Adoption</a>
+        <a href="contact.html">Contact</a>
+        <a href="delivery.html">Delivery</a>
+      </nav>
+      <span class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></span>
+    </div>
   </header>
-<main>
-    <h1>Our horse Pricing</h1>
+
+  <main>
+    <h1>Our Horse Pricing</h1>
     <p class="subtitle">Find the perfect horse within your budget</p>
 
-    <table class="price-table" aria-label="horse pricing table">
+    <table class="price-table" aria-label="Horse pricing table">
       <thead>
         <tr>
           <th scope="col">Breed</th>
@@ -230,49 +205,29 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Gypsy cob</td>
-          <td>£2000</td>
-        </tr>
-        <tr>
-          <td>Irish sport horse</td>
-          <td>£2500</td>
-        </tr>
-        <tr>
-          <td>Highland pony</td>
-          <td>£2500</td>
-        </tr>
-        <tr>
-          <td>Warm blood</td>
-          <td>£3500</td>
-        </tr>
-        <tr>
-          <td>Welsh pony and cob</td>
-          <td>£1500</td>
-        </tr>
-        <tr>
-          <td>Thoroughbred</td>
-          <td>£800</td>
-        </tr>
+        <tr><td>Gypsy Cob</td><td>£2000</td></tr>
+        <tr><td>Irish Sport Horse</td><td>£2500</td></tr>
+        <tr><td>Highland Pony</td><td>£2500</td></tr>
+        <tr><td>Warmblood</td><td>£3500</td></tr>
+        <tr><td>Welsh Pony and Cob</td><td>£1500</td></tr>
+        <tr><td>Thoroughbred</td><td>£800</td></tr>
       </tbody>
     </table>
   </main>
 
   <footer>
-    &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+    &copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.
   </footer>
 
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
-      const isDark = document.body.classList.toggle('dark-mode');
-      localStorage.setItem('darkMode', isDark);
-      toggle.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
-    });
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+    }
+
     window.addEventListener('DOMContentLoaded', () => {
-      if(localStorage.getItem('darkMode') === 'true') {
+      if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
-        toggle.textContent = '☀️ Light Mode';
       }
     });
   </script>

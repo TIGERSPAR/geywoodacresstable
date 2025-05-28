@@ -2,17 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Us - Greywoodacre Stable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Adoption - Geywoodacre Stable</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; } 
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
       background-color: #fdfcfb;
       color: #333;
+      transition: background 0.3s, color 0.3s;
+    }
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
     }
     header {
       background-color: #2f2f2f;
@@ -40,288 +45,31 @@
       text-decoration: none;
       font-weight: 600;
     }
-    .about-section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: auto;
-      text-align: center;
-    }
-    .about-section h2 {
-      font-size: 2.5rem;
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 1rem;
-    }
-    .about-section p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      margin-bottom: 2rem;
-    }
-    .about-image {
-      width: 100%;
-      max-width: 600px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    }
-    footer {
-      background-color: #2f2f2f;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
+    .dark-toggle {
+      margin-left: 1.5rem;
+      cursor: pointer;
+      font-size: 1.2rem;
     }
 
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
-      }
-      nav a {
-        margin: 0.5rem 0;
-      }
-      .about-section h2 {
-        font-size: 2rem;
-      }
-      .about-section p {
-        font-size: 1rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .about-section {
-        padding: 2rem 1rem;
-      }
-    }
-    main h1 {
-      color: #ff6f61;
-      text-align: center;
-      padding-top: 30px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .intro {
-      padding: 20px 30px;
-      font-size: 1.15rem;
-      text-align: center;
-      color: #3a4a59;
-    }
-
-    .team-section {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      padding: 30px 20px 50px;
-    }
-
-    .team-member {
-      flex: 1 1 250px;
-      max-width: 250px;
-      background: #f6f9fc;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.07);
-      text-align: center;
-      padding: 25px 15px 30px;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-
-    .team-member:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-
-    .team-member img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #ff6f61;
-    }
-
-    .team-member h3 {
-      margin: 0 0 6px;
-      font-weight: 700;
-      color: #2c3e50;
-    }
-
-    .team-member p {
-      margin: 0;
-      font-size: 0.9rem;
-      color: #666;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
-      background: #fafafa;
-      margin-top: 60px;
-    }
-
-    /* Dark Mode */
-
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
-
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
-      color: #fff;
-    }
-
-    body.dark-mode .dark-toggle {
-      color: #ff6f61;
-    }
-
-    body.dark-mode main {
-      background: #1e1e1e;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.3);
-    }
-
-    body.dark-mode .intro,
-    body.dark-mode .team-member h3 {
-      color: #ddd;
-    }
-
-    body.dark-mode .team-member p {
-      color: #bbb;
-    }
-
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #bbb;
-    }
     main {
       max-width: 1000px;
-      margin: 50px auto 70px;
-      padding: 0 20px;
+      margin: 3rem auto;
+      padding: 0 2rem;
     }
     h1 {
-      color: #ff6f61;
       text-align: center;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 20px;
-    }
-    .breed-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-      gap: 30px;
-    }
-    .breed-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      cursor: default;
-    }
-    .breed-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-    }
-    .breed-card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-    .breed-info {
-      padding: 20px;
-    }
-    .breed-info h3 {
-      margin: 0 0 10px;
-      color: #2c3e50;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-    .breed-info p {
-      margin: 0;
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.4;
-    }
-    footer {
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
-      background: #fafafa;
-      margin-top: 60px;
-    }
-    /* Dark Mode */
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
-      color: #fff;
-    }
-    body.dark-mode .dark-toggle {
       color: #ff6f61;
-    }
-    body.dark-mode main {
-      background: transparent;
-    }
-    body.dark-mode .breed-card {
-      background: #1e1e1e;
-      box-shadow: 0 6px 18px rgba(255,111,97,0.3);
-    }
-    body.dark-mode .breed-info h3 {
-      color: #ddd;
-    }
-    body.dark-mode .breed-info p {
-      color: #bbb;
-    }
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #bbb;
-    }
- main {
-      max-width: 900px;
-      margin: 50px auto 70px;
-      padding: 0 20px;
-    }
-    h1 {
-      color: #ff6f61;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 40px;
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
     .intro-text {
       text-align: center;
       font-size: 1.15rem;
-      margin-bottom: 40px;
+      margin-bottom: 2.5rem;
       color: #3a5160;
     }
+
     .puppy-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -333,7 +81,6 @@
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       overflow: hidden;
-      cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
     .puppy-card:hover {
@@ -342,7 +89,7 @@
     }
     .puppy-card img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
       border-bottom: 3px solid #ff6f61;
     }
@@ -352,31 +99,29 @@
     .puppy-info h3 {
       margin: 0 0 8px;
       color: #ff6f61;
-      font-weight: 700;
-      font-size: 1.2rem;
+      font-size: 1.3rem;
     }
     .puppy-info p {
       margin: 0;
       color: #4a6171;
       font-size: 0.95rem;
     }
+
     form.adoption-form {
       background: white;
       padding: 30px 25px;
       border-radius: 15px;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       max-width: 500px;
-      margin: 0 auto;
+      margin: 0 auto 3rem;
       display: flex;
       flex-direction: column;
       gap: 18px;
     }
     form.adoption-form h2 {
       color: #ff6f61;
-      font-weight: 800;
       text-align: center;
-      margin-bottom: 20px;
-      letter-spacing: 1.5px;
+      font-size: 1.8rem;
     }
     form.adoption-form input,
     form.adoption-form select,
@@ -386,8 +131,6 @@
       border: 1.8px solid #ccc;
       border-radius: 8px;
       resize: vertical;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
     }
     form.adoption-form input:focus,
     form.adoption-form select:focus,
@@ -408,135 +151,127 @@
     form.adoption-form button:hover {
       background: #e65b50;
     }
+
     footer {
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
-      background: #fafafa;
-      margin-top: 60px;
-    }
-    /* Dark Mode */
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
+      background-color: #2f2f2f;
       color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
     }
-    body.dark-mode .dark-toggle {
-      color: #ff6f61;
-    }
-    body.dark-mode footer {
-      background: #1a1a1a;
-      color: #bbb;
-    }
-    body.dark-mode .puppy-card {
-      background: #222;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
-    }
+
+    body.dark-mode .puppy-card,
     body.dark-mode form.adoption-form {
       background: #222;
-      box-shadow: 0 8px 20px rgba(255,111,97,0.2);
     }
     body.dark-mode form.adoption-form input,
     body.dark-mode form.adoption-form select,
     body.dark-mode form.adoption-form textarea {
       background: #333;
       color: #ddd;
-      border: 1.8px solid #555;
+      border-color: #555;
     }
-    body.dark-mode form.adoption-form input:focus,
-    body.dark-mode form.adoption-form select:focus,
-    body.dark-mode form.adoption-form textarea:focus {
-      border-color: #ff6f61;
+    body.dark-mode footer {
+      background: #1a1a1a;
+      color: #bbb;
     }
 
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+      nav a {
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>Greywoodacre Stable</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="breeds.html">Breeds</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="video.html">Videos</a>
-       <a href="price.html">Prices</a>
-       <a href="adoption.html">Adoption</a>
-      <a href="contact.html">Contact</a>
-      <a href="delivery.html">Delivery</a>
-    </nav>
+    <h1>Geywoodacre Stable</h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="breeds.html">Breeds</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="video.html">Videos</a>
+        <a href="price.html">Prices</a>
+        <a href="adoption.html">Adoption</a>
+        <a href="contact.html">Contact</a>
+        <a href="delivery.html">Delivery</a>
+      </nav>
+      <span class="dark-toggle" onclick="toggleDarkMode()"><i class="fas fa-moon"></i></span>
+    </div>
   </header>
-<main>
-    <h1>About GRYWOODACRESSTABLE</h1>
-    <p class="intro">
-      At GRYWOODACRESSTABLE, we believe every horse deserves a loving home and a happy life. Since 2010, our passionate team has been dedicated to connecting families with their perfect equine companions through responsible breeding and adoption.
-    </p>
 
-    <section class="team-section">
-      <div class="team-member">
-        <img src="t2.jpeg" alt="Jane Doe - Founder" loading="lazy" />
-        <h3>Jane Doe</h3>
-        <p>Founder</p>
+  <main>
+    <h1>Adopt Your New Best Friend</h1>
+    <p class="intro-text">Find your perfect horse today! Below are some of our adorable horses currently waiting for loving homes.</p>
+
+    <div class="puppy-list">
+      <div class="puppy-card">
+        <img src="br2.jpeg" alt="Gypsy Cob horse" loading="lazy" />
+        <div class="puppy-info">
+          <h3>Gypsy Cob</h3>
+          <p>Calm and friendly, ideal for families and beginner riders.</p>
+        </div>
       </div>
-      <div class="team-member">
-        <img src="t3.jpeg" alt="Rose Mary - Adoption Coordinator" loading="lazy" />
-        <h3>Rose Mary</h3>
-        <p>Adoption Coordinator</p>
+      <div class="puppy-card">
+        <img src="br4.jpeg" alt="Irish Sport Horse" loading="lazy" />
+        <div class="puppy-info">
+          <h3>Irish Sport Horse</h3>
+          <p>Elegant and athletic, perfect for riding and jumping sports.</p>
+        </div>
       </div>
-      <div class="team-member">
-        <img src="t6.jpeg" alt="Emily Clark - Horse Care Specialist" loading="lazy" />
-        <h3>Emily Clark</h3>
-        <p>Horse Care Specialist</p>
+      <div class="puppy-card">
+        <img src="br6.jpeg" alt="Highland Pony" loading="lazy" />
+        <div class="puppy-info">
+          <h3>Highland Pony</h3>
+          <p>Hardy and dependable, great for trails and family adventures.</p>
+        </div>
       </div>
-      <div class="team-member">
-        <img src="t5.jpeg" alt="Bella Havort - Head Breeder" loading="lazy" />
-        <h3>Bella Havort</h3>
-        <p>Head Breeder</p>
-      </div>
-      <div class="team-member">
-        <img src="t4.jpeg" alt="John & Abigail - Horse Trainers" loading="lazy" />
-        <h3>John & Abigail</h3>
-        <p>In Charge of Training Horses</p>
-      </div>
-      <div class="team-member">
-        <img src="t7.jpeg" alt="Henry & Tracy - Riders" loading="lazy" />
-        <h3>Henry & Tracy</h3>
-        <p>Riders</p>
-      </div>
-    </section>
+    </div>
+
+    <form class="adoption-form" action="https://formspree.io/f/xdkgbjdz" method="POST">
+      <h2>Adoption Application</h2>
+      <input type="text" name="fullname" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+      <input type="tel" name="phone" placeholder="Phone Number" required />
+      <select name="horse" required>
+        <option value="" disabled selected>Select horse to adopt</option>
+        <option value="gypsy-cob">Gypsy Cob</option>
+        <option value="irish-sport">Irish Sport Horse</option>
+        <option value="highland-pony">Highland Pony</option>
+        <option value="warmblood">Warmblood</option>
+        <option value="welsh-pony">Welsh Pony and Cob</option>
+        <option value="thoroughbred">Thoroughbred</option>
+      </select>
+      <textarea name="message" rows="5" placeholder="Tell us about yourself and why you'd make a great horse parent!" required></textarea>
+      <button type="submit">Submit Application</button>
+    </form>
   </main>
 
   <footer>
-    &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+    &copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.
   </footer>
 
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
+    function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
-    });
-
-    document.getElementById('mobile-menu').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('active');
     });
   </script>
 </body>

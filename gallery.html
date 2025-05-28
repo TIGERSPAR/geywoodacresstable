@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gallery - Greywoodacre Stable</title>
+  <title>Gallery - Geywoodacre Stable</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
-    * { box-sizing: border-box; } 
+    * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fdfcfb;
+      background: #fdfcfb;
       color: #333;
+      transition: background 0.3s, color 0.3s;
     }
+
+    body.dark-mode {
+      background: #121212;
+      color: #ddd;
+    }
+
     header {
       background-color: #2f2f2f;
       padding: 1rem 2rem;
@@ -23,88 +31,63 @@
       flex-wrap: wrap;
       color: #fff;
     }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: 1.8rem;
       margin: 0;
     }
+
     nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 0.5rem;
     }
+
     nav a {
       color: #fff;
       margin-left: 1.5rem;
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .gallery-section {
-      padding: 4rem 2rem;
+
+    nav a:hover {
+      color: #ff6f61;
+    }
+
+    .dark-toggle {
+      margin-left: 1.5rem;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+
+    .dark-toggle:hover {
+      color: #ff6f61;
+    }
+
+    main {
       max-width: 1200px;
-      margin: auto;
+      margin: 3rem auto;
+      padding: 0 2rem;
     }
-    .gallery-section h2 {
+
+    h1 {
+      color: #ff6f61;
       text-align: center;
       font-family: 'Playfair Display', serif;
       font-size: 2.5rem;
       margin-bottom: 2rem;
     }
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-    .gallery-grid img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s ease;
-    }
-    .gallery-grid img:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      background-color: #2f2f2f;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-      margin-top: 3rem;
-    }
-    @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 1rem;
-      }
-      nav a {
-        margin: 0.5rem 0;
-      }
-    }
-     main {
-      max-width: 1000px;
-      margin: 50px auto 70px;
-      padding: 0 20px;
-    }
-    h1 {
-      color: #ff6f61;
-      text-align: center;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 30px;
-    }
+
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 20px;
     }
+
     .gallery-item {
       position: relative;
       overflow: hidden;
@@ -113,6 +96,7 @@
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+
     .gallery-item img {
       width: 100%;
       height: 160px;
@@ -121,11 +105,13 @@
       border-radius: 12px;
       transition: transform 0.3s ease;
     }
+
     .gallery-item:hover img {
       transform: scale(1.05);
       box-shadow: 0 10px 25px rgba(0,0,0,0.2);
     }
-    /* Lightbox styles */
+
+    /* Lightbox */
     #lightboxOverlay {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -135,6 +121,7 @@
       align-items: center;
       z-index: 2000;
     }
+
     #lightboxOverlay img {
       max-width: 90%;
       max-height: 90vh;
@@ -142,7 +129,8 @@
       box-shadow: 0 10px 30px rgba(255,111,97,0.8);
       animation: fadeInScale 0.3s ease forwards;
     }
-    #lightboxOverlay.close-btn {
+
+    #closeLightbox {
       position: absolute;
       top: 20px;
       right: 30px;
@@ -151,6 +139,7 @@
       cursor: pointer;
       user-select: none;
     }
+
     @keyframes fadeInScale {
       from {
         opacity: 0;
@@ -161,144 +150,140 @@
         transform: scale(1);
       }
     }
+
     footer {
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 0.9rem;
-      color: #999;
-      background: #fafafa;
-      margin-top: 60px;
-    }
-    /* Dark Mode */
-    body.dark-mode {
-      background: #121212;
-      color: #ddd;
-    }
-    body.dark-mode .navbar {
-      background: #1f1f1f;
-      box-shadow: 0 2px 5px rgba(255,255,255,0.1);
-    }
-    body.dark-mode .navbar nav ul li a {
-      color: #ccc;
-    }
-    body.dark-mode .navbar nav ul li a.active,
-    body.dark-mode .navbar nav ul li a:hover {
-      background: #ff6f61;
+      background: #2f2f2f;
       color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 4rem;
     }
-    body.dark-mode .dark-toggle {
-      color: #ff6f61;
+
+    body.dark-mode .gallery-item {
+      box-shadow: 0 6px 15px rgba(255,111,97,0.2);
     }
+
     body.dark-mode footer {
       background: #1a1a1a;
       color: #bbb;
     }
-    body.dark-mode .gallery-item {
-      box-shadow: 0 6px 15px rgba(255,111,97,0.2);
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin: 0.5rem 0;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Greywoodacre Stable</h1>
-    <nav>
-      <a href="home.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="breeds.html">Breeds</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="video.html">Videos</a>
-       <a href="price.html">Prices</a>
-       <a href="adoption.html">Adoption</a>
-      <a href="contact.html">Contact</a>
-      <a href="delivery.html">Delivery</a>
-    </nav>
+    <h1>Geywoodacre Stable</h1>
+    <div style="display: flex; align-items: center;">
+      <nav>
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="breeds.html">Breeds</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="video.html">Videos</a>
+        <a href="price.html">Prices</a>
+        <a href="adoption.html">Adoption</a>
+        <a href="contact.html">Contact</a>
+        <a href="delivery.html">Delivery</a>
+      </nav>
+      <span class="dark-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></span>
+    </div>
   </header>
 
   <main>
     <h1>Our Adorable Horses</h1>
     <div class="gallery-grid">
-      <!-- Cleaned gallery items with appropriate alt attributes -->
-      <div class="gallery-item"><img src="h3.jpg" alt="Horse grazing in field" /></div>
+      <!-- Replace these with actual image elements or generate dynamically -->
       <div class="gallery-item"><img src="h1.jpg" alt="Brown horse portrait" /></div>
       <div class="gallery-item"><img src="h2.jpg" alt="Horse with rider" /></div>
+      <div class="gallery-item"><img src="h3.jpg" alt="Horse grazing in field" /></div>
       <div class="gallery-item"><img src="h4.jpg" alt="Horse in paddock" /></div>
       <div class="gallery-item"><img src="h5.jpg" alt="Foal near fence" /></div>
-      <div class="gallery-item"><img src="h7.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h8.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h9.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h10.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h11.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h12.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h13.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h14.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h15.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h16.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h17.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h18.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h19.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h20.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h21.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h22.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h23.jpeg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h24.jpeg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h25.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h26.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h27.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h28.jpeg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="h29.jpeg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n1.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n2.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n3.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n4.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n5.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n6.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n7.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n8.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n9.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n10.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n11.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n12.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n13.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n14.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n15.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n16.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n17.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n18.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n19.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n20.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n21.jpg" alt="Horse on pasture" /></div>
-      <div class="gallery-item"><img src="n22.jpg" alt="Horse on pasture" /></div>
-      
-      <!-- Add more descriptive alt text or image file names accordingly -->
-      <!-- ... rest of images ... -->
+      <div class="gallery-item"><img src="h7.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h8.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h9.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h10.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h11.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h12.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h13.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h14.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h15.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h16.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h17.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h18.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h19.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h20.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h21.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h22.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h23.jpeg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h24.jpeg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h25.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h26.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h27.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h28.jpeg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="h29.jpeg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n1.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n2.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n3.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n4.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n5.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n6.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n7.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n8.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n9.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n10.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n11.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n12.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n13.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n14.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n15.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n16.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n17.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n18.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n19.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n20.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n21.jpg" alt="Foal near fence" /></div>
+      <div class="gallery-item"><img src="n22.jpg" alt="Foal near fence" /></div>
+      <!-- ... Add other images here as needed ... -->
     </div>
   </main>
 
-  <!-- Lightbox Overlay -->
+  <!-- Lightbox -->
   <div id="lightboxOverlay">
     <span id="closeLightbox">&times;</span>
-    <img src="" alt="Enlarged Horse" />
+    <img src="" alt="Enlarged horse" />
   </div>
 
   <footer>
-    &copy; 2025 GRYWOODACRESSTABLE. All rights reserved.
+    &copy; 2025 GEYWOOD ACRES STABLE. All rights reserved.
   </footer>
 
   <script>
-    const toggle = document.getElementById('darkModeToggle');
-    toggle.addEventListener('click', () => {
+    // Dark mode toggle
+    function toggleDarkMode() {
       document.body.classList.toggle('dark-mode');
       localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
-    });
+    }
 
     window.addEventListener('DOMContentLoaded', () => {
       if (localStorage.getItem('darkMode') === 'true') {
         document.body.classList.add('dark-mode');
       }
-    });
-
-    document.getElementById('mobile-menu').addEventListener('click', () => {
-      document.getElementById('nav-links').classList.toggle('active');
     });
 
     // Lightbox functionality
